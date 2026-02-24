@@ -6,7 +6,7 @@ import { ArrowUpRight, Clock, ArrowRight, Leaf, Search } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { blogPosts } from "@/components/blog-preview"
+import { blogPosts } from "@/lib/data-blog"
 import { useState, useEffect, useRef } from "react"
 
 const allCategories = ["Todos", "Adulto Mayor", "Sistema Nervioso", "Hormonal", "Metabolismo", "Infantil"]
@@ -166,8 +166,8 @@ export default function BlogPage() {
                   key={cat}
                   onClick={() => setActive(cat)}
                   className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${active === cat
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                      : "border border-border bg-card text-muted-foreground hover:border-secondary/40 hover:text-primary"
+                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                    : "border border-border bg-card text-muted-foreground hover:border-secondary/40 hover:text-primary"
                     }`}
                 >
                   {cat}

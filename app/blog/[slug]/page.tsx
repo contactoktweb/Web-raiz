@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { blogPosts } from "@/components/blog-preview"
+import { blogPosts } from "@/lib/data-blog"
 import { notFound } from "next/navigation"
 
 const blogContent: Record<string, { content: string; relatedProducts: string[] }> = {

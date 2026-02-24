@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
@@ -14,7 +15,9 @@ export default function CheckoutPage() {
     <>
       <Navbar />
       <main className="min-h-screen bg-muted/30">
-        <CheckoutContent />
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Cargando...</div>}>
+          <CheckoutContent />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />
