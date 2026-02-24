@@ -5,16 +5,16 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { TiendaContent } from "@/components/tienda-content"
 
 export const metadata: Metadata = {
-  title: "Tienda Naturista",
+  title: "Tienda Naturista | Raiz Vital",
   description:
-    "Productos naturales organizados por beneficios. Suplementos de alta calidad para energía, salud hormonal, digestiva y más.",
+    "Productos naturales organizados por beneficios. Suplementos de alta calidad para energia, salud hormonal, digestiva y mas.",
 }
 
 export default function TiendaPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-20">
+      <main>
         <TiendaContent />
       </main>
       <Footer />
