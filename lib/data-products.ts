@@ -228,5 +228,79 @@ export const products: Product[] = [
     rating: 5.0,
     reviews: 0,
     image: "/images/megacrbrin.png"
+  },
+  {
+    id: 9,
+    slug: "vtboys",
+    name: "VTBOYS",
+    description: "Multivitamínico completo infantil y juvenil para un desarrollo óptimo, energía y atención escolar.",
+    longDescription: "VTBOYS es un suplemento natural en forma de gomitas o jarabe especialmente balanceado para acompañar el desarrollo de los niños y adolescentes. Provee las vitaminas y minerales necesarios para fortalecer sus defensas, potenciar el enfoque cognitivo y brindarles la energía que necesitan todos los días.",
+    benefits: [
+      "Apoya el crecimiento",
+      "Fortalece el sistema inmunológico infantil",
+      "Mejora la energía y concentración",
+      "Complemento vitaminíco esencial"
+    ],
+    ingredients: [
+      "Vitaminas del complejo B",
+      "Vitamina C",
+      "Hierro y Zinc"
+    ],
+    howToUse: "Consumir diariamente según la recomendación del empaque de acuerdo a la edad.",
+    price: 0,
+    category: "infantil",
+    badge: "Energía vital",
+    rating: 5.0,
+    reviews: 0,
+    image: "/images/vtboys.jpeg"
+  },
+  {
+    id: 10,
+    slug: "clorofila",
+    name: "CLOROFILA LÍQUIDA",
+    description: "Poderoso desintoxicante natural. Oxigena la sangre, regula la digestión y combate el mal aliento.",
+    longDescription: "La Clorofila es uno de los desintoxicantes más potentes de la naturaleza. Considerada 'la sangre de las plantas', este suplemento ayuda a limpiar el organismo de toxinas, equilibrar el pH, mejorar notablemente la digestión y promover un aliento fresco desde el interior mejorando la salud metabólica.",
+    benefits: [
+      "Desintoxica el organismo",
+      "Mejora la digestión",
+      "Oxigena la sangre",
+      "Combate el mal aliento y malos olores"
+    ],
+    ingredients: [
+      "Extracto de Clorofila rica en magnesio",
+      "Agua purificada"
+    ],
+    howToUse: "Mezclar una cucharada sopera en un vaso de agua o tu bebida favorita. Tomar una o dos veces al día.",
+    price: 0,
+    category: "inmunidad",
+    badge: "Detox",
+    rating: 5.0,
+    reviews: 0,
+    image: "/images/clorofila.jpeg"
+  },
+  {
+    id: 11,
+    slug: "colageno-marino",
+    name: "COLÁGENO MARINO",
+    description: "Colágeno Marino hidrolizado de máxima absorción. Piel radiante, cabello fuerte y articulaciones flexibles.",
+    longDescription: "El Colágeno Marino es conocido por tener una biodisponibilidad y absorción superior al colágeno bovino. Nutre desde el interior, combatiendo las señales prematuras de envejecimiento celular, reponiendo la hidratación de la piel, fortaleciendo cabellos, uñas frágiles y apoyando la regeneración de los cartílagos articulares.",
+    benefits: [
+      "Mejora la elasticidad de la piel",
+      "Frena la caída y fortalece el cabello",
+      "Uñas menos quebradizas",
+      "Apoya la salud articular"
+    ],
+    ingredients: [
+      "Colágeno Marino Hidrolizado",
+      "Vitamina C",
+      "Biotina"
+    ],
+    howToUse: "Diluir la porción recomendada en agua o tu preparación diaria. Tomar de manera sostenida.",
+    price: 0,
+    category: "energia",
+    badge: "Anti-edad",
+    rating: 5.0,
+    reviews: 0,
+    image: "/images/colageno-marino.jpeg"
   }
 ]
