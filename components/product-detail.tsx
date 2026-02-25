@@ -18,6 +18,8 @@ import {
 import { Button } from "@/components/ui/button"
 import type { Product } from "@/lib/data-products"
 
+import { useCart } from "@/components/cart-provider"
+
 const WHATSAPP_NUMBER = "573001234567"
 
 function formatPrice(price: number) {
@@ -34,25 +36,13 @@ interface Props {
 }
 
 export function ProductDetail({ product, related }: Props) {
-  const router = useRouter()
+  const { addItem } = useCart()
   const [mounted, setMounted] = useState(false)
   const [activeTab, setActiveTab] = useState<"benefits" | "ingredients" | "usage">("benefits")
 
   useEffect(() => {
     setMounted(true)
   }, [])
-
-  const handleBuy = () => {
-    router.push(`/checkout?product=${product.slug}`)
-  }
-
-  const handleConsult = () => {
-    const message = `Hola, tengo preguntas sobre el producto: ${product.name}. Podrian asesorarme?`
-    window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-      "_blank"
-    )
-  }
 
   const anim = (delay: number) =>
     `transition-all duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
@@ -61,7 +51,7 @@ export function ProductDetail({ product, related }: Props) {
   return (
     <div>
       {/* Breadcrumb bar */}
-      <div className="border-b border-border bg-card/50 pt-24 pb-4">
+      <div className="border-b border-border bg-card/50 pt-32 pb-4">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link
@@ -85,13 +75,13 @@ export function ProductDetail({ product, related }: Props) {
             className={`lg:col-span-7 ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} transition-all duration-[1000ms] delay-0`}
           >
             <div className="sticky top-28">
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted lg:rounded-3xl">
+              <div className="group relative aspect-square overflow-hidden rounded-2xl bg-muted lg:rounded-3xl">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
                   priority
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   sizes="(max-width: 1024px) 100vw, 58vw"
                 />
                 {product.badge && (
@@ -135,14 +125,14 @@ export function ProductDetail({ product, related }: Props) {
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8 bg-secondary" />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
-                {product.category === "energia"
-                  ? "Energia y Sistema Nervioso"
-                  : product.category === "adulto-mayor"
-                    ? "Adulto Mayor"
-                    : product.category === "hormonal"
-                      ? "Equilibrio Hormonal"
-                      : product.category === "digestiva"
-                        ? "Salud Digestiva"
+                {product.category === "rendimiento"
+                  ? "Rendimiento Deportivo"
+                  : product.category === "energia"
+                    ? "Energía y Concentración"
+                    : product.category === "relajacion"
+                      ? "Relajación y Sueño"
+                      : product.category === "inmunidad"
+                        ? "Sistema Inmunológico"
                         : "Desarrollo Infantil"}
               </span>
             </div>
@@ -186,21 +176,12 @@ export function ProductDetail({ product, related }: Props) {
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
-                onClick={handleBuy}
+                onClick={() => addItem(product)}
                 size="lg"
                 className="flex-1 gap-2.5 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:shadow-xl"
               >
                 <ShoppingCart className="h-5 w-5" />
-                Comprar por WhatsApp
-              </Button>
-              <Button
-                onClick={handleConsult}
-                size="lg"
-                variant="outline"
-                className="gap-2.5 rounded-full border-border text-primary hover:bg-muted"
-              >
-                <MessageCircle className="h-5 w-5" />
-                Consultar
+                Añadir al carrito
               </Button>
             </div>
 
@@ -320,12 +301,12 @@ export function ProductDetail({ product, related }: Props) {
                   href={`/tienda/${p.slug}`}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-square overflow-hidden bg-muted">
                     <Image
                       src={p.image}
                       alt={p.name}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     {p.badge && (

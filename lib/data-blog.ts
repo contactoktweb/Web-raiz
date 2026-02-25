@@ -44,4 +44,22 @@ export const blogPosts = [
         readTime: "7 min",
         image: "/images/blog-infantil.jpg",
     },
+    {
+        slug: "nutricion-en-deportistas",
+        title: "NUTRICIÓN EN DEPORTISTAS: Energía, rendimiento y recuperación",
+        excerpt:
+            "El rendimiento de un deportista no depende solo del entrenamiento, depende de la nutrición: la base invisible del éxito físico y la óptima regeneración muscular.",
+        category: "Rendimiento Deportivo",
+        readTime: "7 min",
+        image: "/images/blog-deporte.jpg",
+    },
+    {
+        slug: "belleza-desde-el-interior",
+        title: "BELLEZA DESDE EL INTERIOR: Cuidado de la piel y el cabello",
+        excerpt:
+            "La piel y el cabello son el reflejo de tu nutrición y equilibrio hormonal. Aprende cómo la verdadera belleza comienza de adentro hacia afuera.",
+        category: "Belleza y Anti-edad",
+        readTime: "6 min",
+        image: "/images/blog-metabolica.jpg",
+    },
 ]

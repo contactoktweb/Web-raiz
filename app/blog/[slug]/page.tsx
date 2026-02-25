@@ -114,6 +114,151 @@ El cerebro de un niño consume hasta el 60% de su energía total. Para funcionar
 - Infecciones recurrentes`,
     relatedProducts: ["Omega 3 DHA", "Magnesio infantil"],
   },
+  "nutricion-en-deportistas": {
+    content: `Entrenas fuerte… pero ¿te estás nutriendo correctamente?
+Muchos deportistas —amateurs y profesionales— entrenan con disciplina, constancia y compromiso. Pero el rendimiento no depende solo del entrenamiento. Depende de cómo alimentas tus músculos, tu sistema nervioso y tu capacidad de recuperación. Porque el progreso no ocurre durante el ejercicio. Ocurre después… cuando el cuerpo se regenera. Y sin nutrición adecuada, no hay regeneración óptima.
+
+## ¿Por qué la nutrición es clave en el rendimiento deportivo?
+
+El cuerpo del deportista trabaja a un nivel metabólico más alto. Esto implica:
+- Mayor gasto energético
+- Mayor demanda de proteínas
+- Mayor producción de radicales libres
+- Mayor desgaste muscular
+- Necesidad de recuperación más eficiente
+
+Cuando la nutrición no cubre esas demandas, pueden aparecer fatiga persistente, bajo rendimiento, lesiones frecuentes, recuperación lenta, alteraciones hormonales y problemas digestivos.
+
+## Los pilares de la nutrición deportiva consciente
+
+En Raíz Vital no hablamos solo de “más proteína”. Hablamos de equilibrio metabólico integral.
+
+### 1. Proteína de calidad
+
+Fundamental para: reparación muscular, síntesis de nuevas fibras, prevención de sarcopenia temprana y recuperación post entrenamiento.
+
+**Fuentes clave:** Huevos, pescado, pollo, legumbres, y proteínas de alta biodisponibilidad.
+En algunos casos, la suplementación puede ser útil cuando la dieta no cubre requerimientos.
+
+### 2. Carbohidratos inteligentes
+
+No todos los carbohidratos son iguales. Los carbohidratos complejos ayudan a mantener niveles de energía estables, reponer glucógeno muscular y evitar fatiga prematura.
+
+**Fuentes recomendadas:** Avena, arroz integral, papa, frutas, legumbres.
+La clave no es eliminarlos. Es aprender a utilizarlos estratégicamente.
+
+### 3. Grasas saludables
+
+El deportista también necesita grasas de calidad para la producción hormonal, la salud celular y la regulación inflamatoria.
+
+**Especialmente importantes:** Omega 3, aguacate, nueces, semillas.
+
+## Micronutrientes que marcan la diferencia
+
+Un entrenamiento intenso aumenta la necesidad de ciertos nutrientes.
+
+**Magnesio:** Apoya la función muscular, prevención de calambres y producción de energía.
+**Hierro:** Fundamental para transporte de oxígeno (en casos específicos).
+**Vitamina D:** Apoya la fuerza muscular, el sistema inmune y previene lesiones.
+**Complejo B:** Claves para el metabolismo energético y la respuesta al estrés físico.
+
+## Recuperación: el factor que separa al promedio del excelente
+
+El sobreentrenamiento sin recuperación adecuada puede llevar a inflamación crónica, alteración del cortisol, disminución de rendimiento y fatiga adrenal.
+
+Aquí pueden apoyar, bajo orientación profesional:
+- Omega 3
+- Antioxidantes naturales
+- Creatina (en casos evaluados)
+- Aminoácidos esenciales
+- Adaptógenos en contextos específicos
+
+## Microbiota y rendimiento deportivo
+
+Un intestino inflamado afecta la absorción de nutrientes, la energía, la respuesta inmune y la inflamación sistémica. Por eso, la salud digestiva es parte esencial del rendimiento. Probióticos específicos y alimentación rica en fibra pueden ser aliados estratégicos.
+
+## Nutrición personalizada: no todos los cuerpos responden igual
+
+Cada deportista tiene:
+- Tipo de disciplina diferente
+- Intensidad distinta
+- Metabolismo único
+- Objetivos específicos
+
+No existe un plan universal. La clave está en la evaluación individual.
+
+## En Raíz Vital acompañamos el rendimiento con ciencia y conciencia
+
+Nuestro enfoque integra:
+- Evaluación metabólica personalizada
+- Ajuste nutricional estratégico
+- Suplementación responsable
+- Apoyo en recuperación y equilibrio hormonal
+
+Porque rendir más no significa desgastarse más. Significa entrenar con inteligencia.`,
+    relatedProducts: ["Creatina Bhella", "Creatinne Vegan", "Megacrbrin"],
+  },
+  "belleza-desde-el-interior": {
+    content: `Cuando el espejo empieza a mostrar señales… piel más seca, cabello más frágil, uñas que se quiebran con facilidad.
+
+Muchas veces buscamos soluciones externas: cremas, tratamientos, productos cosméticos. Pero olvidamos algo fundamental: la piel y el cabello no solo reflejan edad. Reflejan nutrición, equilibrio hormonal, salud intestinal y nivel de inflamación. La verdadera belleza comienza desde adentro.
+
+## La piel y el cabello hablan de tu estado interno
+
+La piel es el órgano más grande del cuerpo. El cabello es tejido en constante renovación. Cuando hay déficit de nutrientes, estrés crónico, inflamación, alteraciones hormonales o mala absorción intestinal, el cuerpo prioriza órganos vitales y deja en segundo plano la piel y el cabello.
+
+Por eso muchas personas notan:
+- Piel opaca
+- Manchas
+- Caída capilar
+- Cabello sin brillo
+- Uñas débiles
+- Envejecimiento prematuro
+
+## Nutrición estratégica para piel y cabello saludables
+
+El cuidado externo es importante, pero la base está en la nutrición celular.
+
+### Nutrientes clave
+
+**Colágeno:** Es la proteína estructural más abundante del cuerpo.
+Con el paso de los años disminuye su producción natural, lo que puede reflejarse en: pérdida de firmeza, líneas de expresión, cabello más fino y uñas frágiles.
+La suplementación con colágeno hidrolizado puede apoyar: elasticidad, hidratación, fortalecimiento capilar y salud articular.
+
+**Biotina (Vitamina B7):** Es fundamental para el metabolismo celular. Apoya el crecimiento capilar, fortalecimiento de uñas y producción de queratina. La deficiencia puede manifestarse en caída del cabello o fragilidad.
+
+**Vitamina E:** Potente antioxidante. Ayuda a proteger las células del daño oxidativo, favorecer la salud de la piel y apoyar la regeneración celular. También contribuye a mantener una piel más luminosa.
+
+### Otros aliados importantes
+
+- Vitamina C (clave para producción de colágeno)
+- Zinc (regeneración y cicatrización)
+- Omega 3 (reduce inflamación y apoya hidratación cutánea)
+- Silicio orgánico (estructura de piel y cabello)
+- Resveratrol, NAD
+
+## La microbiota también influye en la belleza
+
+Un intestino inflamado o desequilibrado puede afectar la absorción de nutrientes, los procesos inflamatorios, y condiciones cutáneas como acné o dermatitis. Por eso, en muchos casos, el cuidado de la piel comienza en el sistema digestivo.
+
+## Belleza consciente: no es solo estética
+
+Cuidar la piel y el cabello no es superficial. Es una forma de reflejar bienestar interno. Cuando el cuerpo está nutrido:
+- La piel luce más firme
+- El cabello tiene más brillo
+- Las uñas se fortalecen
+- La energía mejora
+- La confianza aumenta
+
+## ¿Cuándo considerar suplementación?
+
+Cuando existe caída persistente del cabello, cambios hormonales, estrés prolongado, envejecimiento natural, dietas restrictivas o problemas digestivos. La suplementación debe ser personalizada. No todas las personas necesitan lo mismo.
+
+En Raíz Vital creemos en la belleza integral. No promovemos soluciones rápidas ni promesas irreales. Trabajamos desde la evaluación individual, nutrición estratégica, suplementación responsable y acompañamiento profesional.
+
+Porque la belleza auténtica nace del equilibrio. ¿Quieres fortalecer tu piel y cabello desde adentro? Agenda una asesoría personalizada. Descubre qué nutrientes necesitas realmente. Y construyamos juntos una belleza saludable y sostenible.`,
+    relatedProducts: ["Creatine Bhella", "Vitamina C + Zinc"],
+  }
 }
 
 type Params = Promise<{ slug: string }>
@@ -187,6 +332,13 @@ export default async function BlogPost({ params }: { params: Params }) {
                   <h2 key={i} className="mt-10 mb-4 font-serif text-2xl font-bold text-primary">
                     {paragraph.replace("## ", "")}
                   </h2>
+                )
+              }
+              if (paragraph.startsWith("### ")) {
+                return (
+                  <h3 key={i} className="mt-8 mb-3 font-serif text-xl font-bold text-primary">
+                    {paragraph.replace("### ", "")}
+                  </h3>
                 )
               }
               if (paragraph.startsWith("**") || paragraph.startsWith("- ")) {

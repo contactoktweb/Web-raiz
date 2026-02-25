@@ -7,7 +7,8 @@ import {
   Zap,
   Heart,
   Activity,
-  Leaf,
+  Shield,
+  Moon,
   Baby,
   Star,
   ArrowRight,
@@ -22,14 +23,15 @@ const WHATSAPP_NUMBER = "573001234567"
 
 const categories = [
   { id: "all", label: "Todos", icon: null },
-  { id: "energia", label: "Energia", icon: Zap },
-  { id: "adulto-mayor", label: "Adulto Mayor", icon: Heart },
-  { id: "hormonal", label: "Hormonal", icon: Activity },
-  { id: "digestiva", label: "Digestiva", icon: Leaf },
+  { id: "rendimiento", label: "Rendimiento", icon: Activity },
+  { id: "energia", label: "Energía", icon: Zap },
+  { id: "relajacion", label: "Relajación", icon: Moon },
+  { id: "inmunidad", label: "Inmunidad", icon: Shield },
   { id: "infantil", label: "Infantil", icon: Baby },
 ]
 
 import { products, type Product } from '@/lib/data-products'
+import { useCart } from "@/components/cart-provider"
 
 const badgeColors: Record<string, string> = {
   "Mas vendido": "bg-secondary text-secondary-foreground",
@@ -51,6 +53,7 @@ export function TiendaContent() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [mounted, setMounted] = useState(false)
   const gridRef = useRef<HTMLDivElement>(null)
+  const { addItem } = useCart()
 
   useEffect(() => {
     setMounted(true)
@@ -60,12 +63,6 @@ export function TiendaContent() {
     activeCategory === "all"
       ? products
       : products.filter((p) => p.category === activeCategory)
-
-  const handleBuy = (productName: string) => {
-    const message = `Hola, me interesa comprar: ${productName}. Podrian darme mas informacion?`
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
-    window.open(url, "_blank")
-  }
 
   const featuredProduct = products.find((p) => p.badge === "Mas vendido" && p.category === "energia")
 
@@ -115,12 +112,12 @@ export function TiendaContent() {
         <section className="relative -mt-12 mx-auto max-w-7xl px-4 lg:px-8 z-10">
           <Link href={`/tienda/${featuredProduct.slug}`}>
             <div className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/5 lg:grid-cols-2 lg:rounded-3xl">
-              <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden">
+              <div className="relative aspect-square lg:aspect-auto overflow-hidden">
                 <Image
                   src={featuredProduct.image}
                   alt={featuredProduct.name}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
@@ -186,11 +183,10 @@ export function TiendaContent() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`group/cat flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
-                  isActive
-                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                    : "bg-card text-muted-foreground border border-border hover:border-primary/30 hover:text-primary"
-                }`}
+                className={`group/cat flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${isActive
+                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                  : "bg-card text-muted-foreground border border-border hover:border-primary/30 hover:text-primary"
+                  }`}
               >
                 {cat.icon && (
                   <cat.icon
@@ -224,13 +220,13 @@ export function TiendaContent() {
               {/* Product image */}
               <Link
                 href={`/tienda/${product.slug}`}
-                className="relative aspect-[4/3] overflow-hidden bg-muted"
+                className="relative aspect-square overflow-hidden bg-muted"
               >
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {/* Hover overlay */}
@@ -243,9 +239,8 @@ export function TiendaContent() {
                 {product.badge && (
                   <div className="absolute top-3 left-3">
                     <span
-                      className={`rounded-full px-3 py-1 text-xs font-bold shadow-md ${
-                        badgeColors[product.badge] || "bg-muted text-muted-foreground"
-                      }`}
+                      className={`rounded-full px-3 py-1 text-xs font-bold shadow-md ${badgeColors[product.badge] || "bg-muted text-muted-foreground"
+                        }`}
                     >
                       {product.badge}
                     </span>
@@ -287,13 +282,13 @@ export function TiendaContent() {
                   <Button
                     onClick={(e) => {
                       e.preventDefault()
-                      handleBuy(product.name)
+                      addItem(product)
                     }}
                     size="sm"
                     className="gap-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
                   >
                     <ShoppingCart className="h-3.5 w-3.5" />
-                    Comprar
+                    Añadir al carrito
                   </Button>
                 </div>
               </div>

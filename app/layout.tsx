@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next"
 import { Roboto, Oswald } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { CartProvider } from "@/components/cart-provider"
+import { CartSidebar } from "@/components/cart-sidebar"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -22,12 +24,17 @@ export const metadata: Metadata = {
   description:
     "Encuentra orientación personalizada y productos naturales que tu cuerpo necesita para sanar desde la raíz. Blog educativo de salud y tienda naturista.",
   keywords: [
+    "tienda naturista online",
     "salud natural",
-    "tienda naturista",
-    "suplementos naturales",
-    "asesoría nutricional",
-    "bienestar",
     "productos naturales",
+    "suplementos deportivos",
+    "nutrición deportiva",
+    "rendimiento físico",
+    "energía y concentración",
+    "salud inmunológica",
+    "cuidado del adulto mayor",
+    "bienestar",
+    "asesoría nutricional personalizada",
   ],
   openGraph: {
     title: "Raíz Vital — Nutre tu cuerpo, Equilibra tu vida",
@@ -54,7 +61,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${roboto.variable} ${oswald.variable}`}>
       <body className="font-sans antialiased">
-        {children}
+        <CartProvider>
+          {children}
+          <CartSidebar />
+        </CartProvider>
         <Analytics />
       </body>
     </html>

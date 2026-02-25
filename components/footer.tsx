@@ -9,16 +9,11 @@ const footerLinks = {
     { href: "#asesoria", label: "Asesoría" },
   ],
   categorias: [
-    { href: "/tienda#energia", label: "Energía y Sistema Nervioso" },
-    { href: "/tienda#adulto-mayor", label: "Salud del Adulto Mayor" },
-    { href: "/tienda#hormonal", label: "Equilibrio Hormonal" },
-    { href: "/tienda#digestiva", label: "Salud Digestiva" },
-    { href: "/tienda#infantil", label: "Desarrollo Infantil" },
-  ],
-  legal: [
-    { href: "/privacidad", label: "Política de Privacidad" },
-    { href: "/terminos", label: "Términos y Condiciones" },
-    { href: "/devoluciones", label: "Devoluciones" },
+    { href: "/tienda", label: "Rendimiento Deportivo" },
+    { href: "/tienda", label: "Energía y Concentración" },
+    { href: "/tienda", label: "Relajación y Sueño" },
+    { href: "/tienda", label: "Sistema Inmunológico" },
+    { href: "/tienda", label: "Desarrollo Infantil" },
   ],
 }
 
@@ -26,16 +21,16 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12">
+          {/* Brand - Takes up more space */}
+          <div className="flex flex-col gap-4 lg:col-span-6 lg:pr-12">
             <div className="flex items-center">
               <Image
                 src="/logo-oficial.png"
                 alt="Raíz Vital Logo Blanco"
                 width={80}
                 height={80}
-                className="brightness-0 invert opacity-90 object-contain"
+                className="object-contain"
               />
             </div>
             <p className="text-sm leading-relaxed text-primary-foreground/70">
@@ -81,7 +76,7 @@ export function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
+          <div className="lg:col-span-3">
             <h3 className="mb-4 font-serif text-lg font-semibold">Navegación</h3>
             <ul className="flex flex-col gap-2">
               {footerLinks.navegacion.map((link) => (
@@ -98,27 +93,10 @@ export function Footer() {
           </div>
 
           {/* Categories */}
-          <div>
+          <div className="lg:col-span-3">
             <h3 className="mb-4 font-serif text-lg font-semibold">Categorías</h3>
             <ul className="flex flex-col gap-2">
               {footerLinks.categorias.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="mb-4 font-serif text-lg font-semibold">Legal</h3>
-            <ul className="flex flex-col gap-2">
-              {footerLinks.legal.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -137,9 +115,14 @@ export function Footer() {
           <p className="text-sm text-primary-foreground/60">
             {new Date().getFullYear()} Raíz Vital. Todos los derechos reservados.
           </p>
-          <p className="text-sm text-primary-foreground/60">
-            {"Desarrollado por K&T ❤️"}
-          </p>
+          <a
+            href="https://www.kytcode.lat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground flex items-center justify-center gap-1"
+          >
+            Desarrollado por K&T 🤍
+          </a>
         </div>
       </div>
     </footer>

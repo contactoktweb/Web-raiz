@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useCart } from "@/components/cart-provider"
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -20,6 +21,7 @@ interface NavbarProps {
 export function Navbar({ transparentLight = false }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { itemCount, setIsOpen: setCartOpen } = useCart()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -45,7 +47,7 @@ export function Navbar({ transparentLight = false }: NavbarProps) {
             width={72}
             height={72}
             priority
-            className={`object-contain transition-all ${isLightMode ? "brightness-0 invert opacity-90" : ""}`}
+            className="object-contain transition-all"
           />
         </Link>
 
@@ -67,18 +69,20 @@ export function Navbar({ transparentLight = false }: NavbarProps) {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/tienda" aria-label="Carrito de compras">
+          <button onClick={() => setCartOpen(true)} aria-label="Carrito de compras">
             <Button
               variant="ghost"
               size="icon"
               className={`relative ${isLightMode ? "text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" : ""}`}
             >
               <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
-                0
-              </span>
+              {itemCount > 0 && (
+                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
+                  {itemCount}
+                </span>
+              )}
             </Button>
-          </Link>
+          </button>
           <Link href="#asesoria">
             <Button className={isLightMode ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : "bg-primary text-primary-foreground hover:bg-primary/90"}>
               Asesoría Gratis
@@ -115,12 +119,18 @@ export function Navbar({ transparentLight = false }: NavbarProps) {
               </Link>
             ))}
             <div className="flex items-center gap-3 pt-4 border-t border-border">
-              <Link href="/tienda" className="flex-1">
+              <button
+                onClick={() => {
+                  setIsOpen(false)
+                  setCartOpen(true)
+                }}
+                className="flex-1"
+              >
                 <Button variant="outline" className="w-full border-primary text-primary">
                   <ShoppingCart className="mr-2 h-4 w-4" />
-                  Carrito
+                  Carrito ({itemCount})
                 </Button>
-              </Link>
+              </button>
               <Link href="#asesoria" className="flex-1" onClick={() => setIsOpen(false)}>
                 <Button className="w-full bg-primary text-primary-foreground">
                   Asesoría

@@ -19,8 +19,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = products.find((p) => p.slug === slug)
   if (!product) return {}
   return {
-    title: `${product.name} | Raiz Vital`,
+    title: `${product.name} | Raíz Vital`,
     description: product.description,
+    keywords: [
+      product.name,
+      product.category,
+      "suplemento natural",
+      "tienda naturista",
+      "salud",
+      ...product.benefits,
+    ],
+    openGraph: {
+      title: `${product.name} - Raíz Vital`,
+      description: product.description,
+      type: "website",
+      images: [
+        {
+          url: product.image,
+          width: 800,
+          height: 800,
+          alt: product.name,
+        },
+      ],
+    },
   }
 }
 
