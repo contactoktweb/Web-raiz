@@ -97,7 +97,7 @@ export function Footer() {
             <h3 className="mb-4 font-serif text-lg font-semibold">Categorías</h3>
             <ul className="flex flex-col gap-2">
               {footerLinks.categorias.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
