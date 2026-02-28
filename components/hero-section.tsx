@@ -79,7 +79,7 @@ export function HeroSection() {
           <div className="flex items-center gap-3">
             <div className="h-px w-12 bg-secondary" />
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary">
-              Salud natural y consciente
+              Raíz Vital | Salud natural y consciente
             </span>
           </div>
         </div>

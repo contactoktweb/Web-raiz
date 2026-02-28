@@ -8,299 +8,863 @@ export interface Product {
   ingredients: string[]
   howToUse: string
   price: number
-  category: string
+  category: string[]
   badge: string | null
   rating: number
   reviews: number
   image: string
+  gallery?: string[]
 }
 
 export const products: Product[] = [
   {
-    id: 1,
-    slug: "creatine-bhella-xd-300g",
-    name: "CREATINE BHELLA X 300 GR",
-    description: "Suplemento de Creatina Monohidratada FitoVit Bhella enriquecida con Colágeno y Biotina para el máximo rendimiento deportivo, energía y vitalidad.",
-    longDescription: "Potencia tus rutinas desde el inicio. FitoVit Bhella Creatine Monohydrate es una fórmula en polvo avanzada que combina creatina monohidratada pura con colágeno y biotina. Es un suplemento deportivo 100% natural ideal para aumentar tu masa muscular, potenciar la energía física, fortalecer tu belleza y acelerar la recuperación post-entrenamiento en cualquier disciplina.",
-    benefits: [
-      "Aumenta tu masa muscular",
-      "Mejora tu rendimiento",
-      "Con colágeno y biotina",
-      "Recuperación rápida",
-      "Fuerza y vitalidad",
-      "Potencia tu belleza y energía"
+    "id": 1,
+    "slug": "megacollagen-x-500-gr",
+    "name": "Megacollagen x 500 gr",
+    "description": "Descripción temporal para Megacollagen x 500 gr. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Megacollagen x 500 gr. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Creatina Monohidratada",
-      "Colágeno",
-      "Biotina"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Mezclar una porción con agua y consumir preferiblemente antes o después del entrenamiento.",
-    price: 0,
-    category: "energia",
-    badge: "Nuevo",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/creatine-bhella.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/megacollagen-x-500-gr-1.png",
+    "gallery": [
+      "/images/megacollagen-x-500-gr-1.png",
+      "/images/megacollagen-x-500-gr-2.png"
+    ]
   },
   {
-    id: 2,
-    slug: "creatinne-vegan-300g",
-    name: "CREATINNE VEGAN X 300 GR",
-    description: "Creatina Monohidratada Vegana en polvo a base de proteína de arveja con BCAA, ideal para aumentar la fuerza y recuperación muscular.",
-    longDescription: "FitoVit Creatine Monohydrate Vegan es el suplemento natural definitivo para aumentar el rendimiento físico. Formulada a base de proteína de arveja de alta asimilación junto con creatina y aminoácidos BCAA (Valina, Leucina, Isoleucina). Especialmente diseñada para dietas veganas y deportistas exigentes que buscan evitar el daño muscular, acelerar la reparación de las fibras musculares y evitar la sarcopenia de manera natural.",
-    benefits: [
-      "Potencia el rendimiento físico",
-      "Aumenta la fuerza muscular",
-      "Acelera la recuperación post-entrenamiento",
-      "Repara y fortalece las fibras musculares",
-      "Ayuda a mantener un entorno anabólico ideal para el crecimiento muscular"
+    "id": 2,
+    "slug": "colageno-x-24-sachets",
+    "name": "Colágeno x 24 sachets",
+    "description": "Descripción temporal para Colágeno x 24 sachets. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Colágeno x 24 sachets. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Creatina Monohidratada",
-      "Proteína de arveja",
-      "Valina",
-      "Leucina",
-      "Isoleucina"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Mezclar una porción con agua y consumir preferiblemente antes o después del entrenamiento. Rinde 20 porciones.",
-    price: 0,
-    category: "energia",
-    badge: "Vegano",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/creatinne-vegan.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
   },
   {
-    id: 3,
-    slug: "bisglicinato-magnesio-100",
-    name: "BISGLICINATO DE MAGNESIO X 100",
-    description: "Bisglicinato de Magnesio de alta absorción con Colágeno Hidrolizado. Mejora el sueño y la relajación.",
-    longDescription: "Alimento masticable a base de suero de leche con cúrcuma y colágeno hidrolizado. El magnesio en forma de bisglicinato ofrece alta absorción, es suave para el estómago y previene molestias gastrointestinales. Mejora el bienestar integral, reduciendo el estrés y favoreciendo un descanso profundo.",
-    benefits: [
-      "Alta Absorción",
-      "Mejora del Sueño",
-      "Relajación del Sistema Nervioso",
-      "Reducción del Estrés Nocturno",
-      "Suave para el Estómago",
-      "Bienestar Integral"
+    "id": 3,
+    "slug": "colageno-marino-x-700-gr",
+    "name": "Colágeno marino x 700 gr",
+    "description": "Descripción temporal para Colágeno marino x 700 gr. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Colágeno marino x 700 gr. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Bisglicinato de Magnesio",
-      "Colágeno Hidrolizado",
-      "Suero de Leche",
-      "Cúrcuma",
-      "Stevia"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Consumir las porciones indicadas en el envase (producto masticable de uso diario seguro). Contenido: 100 unidades.",
-    price: 0,
-    category: "relajacion",
-    badge: "Alta Absorción",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/bisglicinato-magnesio.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
   },
   {
-    id: 4,
-    slug: "seven7-500ml",
-    name: "SEVEN7",
-    description: "Bebida energizante natural SEVEN7. Aumenta tu energía diaria, rendimiento físico y placer con extractos botánicos puros.",
-    longDescription: "La bebida energizante SEVEN7 es tu mejor aliada para la vitalidad y concentración. Diseñada con maca, guaraná y chontaduro para liberar la tensión y prevenir la fatiga extrema. Sus ingredientes naturales te proporcionan un empuje metabólico duradero, maximizando tu energía, fuerza física y rendimiento cuando más lo necesitas, sin bajones bruscos.",
-    benefits: [
-      "Aumenta tu Energía",
-      "Aumenta tu Rendimiento",
-      "Libera Tensión",
-      "Previene la Fatiga",
-      "Te Mantiene Concentrado",
-      "Aumenta Tu Placer"
+    "id": 4,
+    "slug": "5-colageno-x-60-pastillas",
+    "name": "5 Colágeno x 60 pastillas",
+    "description": "Descripción temporal para 5 Colágeno x 60 pastillas. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para 5 Colágeno x 60 pastillas. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Maca",
-      "Guaraná",
-      "Chontaduro",
-      "Borojó",
-      "Vitaminas A, E, C, B1, B2, B6",
-      "Magnesio"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Consumir una porción al día o cuando se requiera energía extra.",
-    price: 0,
-    category: "energia",
-    badge: "Energizante",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/seven7.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
   },
   {
-    id: 5,
-    slug: "vitamina-c-zinc-gomas",
-    name: "VITAMINA C + ZINC",
-    description: "Gummimas masticables con Vitamina C y Zinc. Fortalece tu sistema inmunológico.",
-    longDescription: "FitoVit Gummimas son gomas masticables enriquecidas con Vitamina C y Zinc, con delicioso sabor a naranja. Ayudan a combatir la gripe y el resfriado común, mejoran la absorción de hierro, y mantienen la salud de tu piel, huesos y tejidos conectivos.",
-    benefits: [
-      "Fortalece el sistema inmunológico",
-      "Mantiene la piel, huesos y tejidos conectivos saludables",
-      "Ayuda en la absorción de hierro",
-      "Combate la gripe y el resfriado común"
+    "id": 5,
+    "slug": "nat-resveratrol-x-100",
+    "name": "Nat Resveratrol x 100",
+    "description": "Descripción temporal para Nat Resveratrol x 100. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Nat Resveratrol x 100. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Vitamina C",
-      "Zinc",
-      "Sabor natural y artificial a Naranja"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Masticar de acuerdo a las porciones del envase. Contiene 60 unidades (180g), ideal para un mes (30 porciones).",
-    price: 0,
-    category: "inmunidad",
-    badge: "Gomitas",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/vitamina-c-zinc.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/nat-resveratrol-x-100-1.png",
+    "gallery": [
+      "/images/nat-resveratrol-x-100-1.png",
+      "/images/nat-resveratrol-x-100-2.png"
+    ]
   },
   {
-    id: 6,
-    slug: "vitamina-c-zinc-kids",
-    name: "VITAMINA C + ZINC (KIDS)",
-    description: "Gummimas masticables para cuidar a los pequeños del hogar. Sabor a mandarina, sin azúcares añadidos.",
-    longDescription: "FitoVit Gummimas es la opción ideal para acompañar el crecimiento de los niños. Estas divertidas gomas masticables combinan los beneficios de la Vitamina C y el Zinc, no contienen azúcares añadidos y tienen un delicioso sabor a mandarina que a los niños les encanta. Fortalece sus defensas de la manera más rica y saludable.",
-    benefits: [
-      "Especial para cuidar a los pequeños del hogar",
-      "Fortalece el sistema inmunológico infantil",
-      "Sin azúcares añadidos",
-      "¡A los niños les encanta!"
+    "id": 6,
+    "slug": "nat-resveratrol-funda",
+    "name": "Nat Resveratrol funda",
+    "description": "Descripción temporal para Nat Resveratrol funda. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Nat Resveratrol funda. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Vitamina C",
-      "Zinc",
-      "Sabor a Mandarina"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Masticar de acuerdo a las recomendaciones del envase. Contiene 60 unidades.",
-    price: 0,
-    category: "infantil",
-    badge: "Sin Azúcar",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/vitamina-c-zinc-kids.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
   },
   {
-    id: 7,
-    slug: "ashwagandha-60-caps",
-    name: "ASHWAGANDHA X 60 CAPS",
-    description: "Equilibra el cortisol, favorece el sueño profundo y mejora la energía diaria.",
-    longDescription: "FitoVit Ashwagandha (Withania Somnifera) es un adaptógeno natural ideal para personas a partir de los 30 años. Ayuda a equilibrar la hormona del cortisol, promoviendo calma y bienestar. Favorece un sueño reparador y mejora la resistencia física y mental sin depender de estimulantes para combatir el ritmo diario.",
-    benefits: [
-      "Equilibra el cortisol (calma, enfoque y bienestar)",
-      "Favorece un sueño profundo y reparador",
-      "Energía diaria y mejora la resistencia física y mental",
-      "Equilibrio mental sin depender de estimulantes"
+    "id": 7,
+    "slug": "vitafrancesa-x-24-sachet",
+    "name": "Vitafrancesa x 24 sachet",
+    "description": "Descripción temporal para Vitafrancesa x 24 sachet. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Vitafrancesa x 24 sachet. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Ashwagandha (Withania Somnifera)"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Consumir según las indicaciones del envase. Contiene 60 cápsulas.",
-    price: 0,
-    category: "relajacion",
-    badge: "Adaptógeno",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/ashwagandha.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
   },
   {
-    id: 8,
-    slug: "megacrbrin-cerebro",
-    name: "MEGACRBRIN",
-    description: "Libera el potencial de tu cerebro. Mejora la concentración, la memoria y combate el cansancio.",
-    longDescription: "MEGACRBRIN mantiene tu cerebro encendido. ¿Te cuesta concentrarte, olvidas lo que ibas a decir o siempre estás cansado? Esta fórmula le da a tu cerebro los mejores nutrientes para optimizar su funcionamiento diario e incrementar la energía de manera natural. Con registro INVIMA.",
-    benefits: [
-      "Mejora la concentración",
-      "Ayuda con la memoria (no olvides lo que ibas a decir)",
-      "Combate el cansancio y la fatiga cerebral",
-      "Libera el potencial de tu cerebro"
+    "id": 8,
+    "slug": "cranberry-x-60-und",
+    "name": "Cranberry x 60 und",
+    "description": "Suplemento nutricional con Cranberry (Arándano rojo) para el cuidado del tracto urinario y sistema inmunológico.",
+    "longDescription": "Esta es la información detallada para Cranberry x 60 und. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Maca",
-      "Jalea Real",
-      "Vitaminas del Complejo B",
-      "Minerales esenciales"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Consumir según las recomendaciones del envase.",
-    price: 0,
-    category: "energia",
-    badge: "Pocas Unidades",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/megacrbrin.png"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 65000,
+    "category": [
+      "belleza"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/cranberry-x-60-und.png"
   },
   {
-    id: 9,
-    slug: "vtboys",
-    name: "VTBOYS",
-    description: "Multivitamínico completo infantil y juvenil para un desarrollo óptimo, energía y atención escolar.",
-    longDescription: "VTBOYS es un suplemento natural en forma de gomitas o jarabe especialmente balanceado para acompañar el desarrollo de los niños y adolescentes. Provee las vitaminas y minerales necesarios para fortalecer sus defensas, potenciar el enfoque cognitivo y brindarles la energía que necesitan todos los días.",
-    benefits: [
-      "Apoya el crecimiento",
-      "Fortalece el sistema inmunológico infantil",
-      "Mejora la energía y concentración",
-      "Complemento vitaminíco esencial"
+    "id": 9,
+    "slug": "urofem-probioticos-x-60-gomitas",
+    "name": "Urofem Probióticos x 60 gomitas",
+    "description": "Descripción temporal para Urofem Probióticos x 60 gomitas. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Urofem Probióticos x 60 gomitas. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Vitaminas del complejo B",
-      "Vitamina C",
-      "Hierro y Zinc"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Consumir diariamente según la recomendación del empaque de acuerdo a la edad.",
-    price: 0,
-    category: "infantil",
-    badge: "Energía vital",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/vtboys.jpeg"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "hormonal"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
   },
   {
-    id: 10,
-    slug: "clorofila",
-    name: "CLOROFILA LÍQUIDA",
-    description: "Poderoso desintoxicante natural. Oxigena la sangre, regula la digestión y combate el mal aliento.",
-    longDescription: "La Clorofila es uno de los desintoxicantes más potentes de la naturaleza. Considerada 'la sangre de las plantas', este suplemento ayuda a limpiar el organismo de toxinas, equilibrar el pH, mejorar notablemente la digestión y promover un aliento fresco desde el interior mejorando la salud metabólica.",
-    benefits: [
-      "Desintoxica el organismo",
-      "Mejora la digestión",
-      "Oxigena la sangre",
-      "Combate el mal aliento y malos olores"
+    "id": 10,
+    "slug": "ashwagandha-homeopatica",
+    "name": "Ashwagandha homeopática",
+    "description": "Descripción temporal para Ashwagandha homeopática. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Ashwagandha homeopática. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Extracto de Clorofila rica en magnesio",
-      "Agua purificada"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Mezclar una cucharada sopera en un vaso de agua o tu bebida favorita. Tomar una o dos veces al día.",
-    price: 0,
-    category: "inmunidad",
-    badge: "Detox",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/clorofila.jpeg"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "hormonal",
+      "estres"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
   },
   {
-    id: 11,
-    slug: "colageno-marino",
-    name: "COLÁGENO MARINO",
-    description: "Colágeno Marino hidrolizado de máxima absorción. Piel radiante, cabello fuerte y articulaciones flexibles.",
-    longDescription: "El Colágeno Marino es conocido por tener una biodisponibilidad y absorción superior al colágeno bovino. Nutre desde el interior, combatiendo las señales prematuras de envejecimiento celular, reponiendo la hidratación de la piel, fortaleciendo cabellos, uñas frágiles y apoyando la regeneración de los cartílagos articulares.",
-    benefits: [
-      "Mejora la elasticidad de la piel",
-      "Frena la caída y fortalece el cabello",
-      "Uñas menos quebradizas",
-      "Apoya la salud articular"
+    "id": 11,
+    "slug": "fenogreco-x-60-pastillas",
+    "name": "Fenogreco x 60 pastillas",
+    "description": "Descripción temporal para Fenogreco x 60 pastillas. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Fenogreco x 60 pastillas. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
     ],
-    ingredients: [
-      "Colágeno Marino Hidrolizado",
-      "Vitamina C",
-      "Biotina"
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
     ],
-    howToUse: "Diluir la porción recomendada en agua o tu preparación diaria. Tomar de manera sostenida.",
-    price: 0,
-    category: "energia",
-    badge: "Anti-edad",
-    rating: 5.0,
-    reviews: 0,
-    image: "/images/colageno-marino.jpeg"
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "hormonal"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/fenogreco-x-60-pastillas-1.png",
+    "gallery": [
+      "/images/fenogreco-x-60-pastillas-1.png",
+      "/images/fenogreco-x-60-pastillas-2.png"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "shilajit",
+    "name": "Shilajit",
+    "description": "Descripción temporal para Shilajit. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Shilajit. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "hormonal",
+      "deportiva"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 13,
+    "slug": "seven-7-sachets",
+    "name": "Seven 7 sachets",
+    "description": "Descripción temporal para Seven 7 sachets. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Seven 7 sachets. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "hormonal",
+      "infantil",
+      "deportiva"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 14,
+    "slug": "bichota-sachets",
+    "name": "Bichota sachets",
+    "description": "Descripción temporal para Bichota sachets. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Bichota sachets. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "hormonal"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 15,
+    "slug": "vitamina-c-plus-zinc-gomitas",
+    "name": "Vitamina C + Zinc gomitas",
+    "description": "Descripción temporal para Vitamina C + Zinc gomitas. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Vitamina C + Zinc gomitas. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "hormonal",
+      "infantil",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 16,
+    "slug": "melatonin-gomitas",
+    "name": "Melatonin gomitas",
+    "description": "Descripción temporal para Melatonin gomitas. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Melatonin gomitas. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 17,
+    "slug": "tryptox-x-60",
+    "name": "Tryptox x 60",
+    "description": "Descripción temporal para Tryptox x 60. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Tryptox x 60. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 18,
+    "slug": "bisglicinato-de-magnesio-x-100",
+    "name": "Bisglicinato de magnesio x 100",
+    "description": "Descripción temporal para Bisglicinato de magnesio x 100. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Bisglicinato de magnesio x 100. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres",
+      "deportiva",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 19,
+    "slug": "bisglicinato-de-magnesio-x-60",
+    "name": "Bisglicinato de magnesio x 60",
+    "description": "Descripción temporal para Bisglicinato de magnesio x 60. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Bisglicinato de magnesio x 60. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres",
+      "deportiva",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 20,
+    "slug": "7-magnesios-x-60",
+    "name": "7 magnesios x 60",
+    "description": "Descripción temporal para 7 magnesios x 60. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para 7 magnesios x 60. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres",
+      "deportiva",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/7-magnesios-x-60-1.png",
+    "gallery": [
+      "/images/7-magnesios-x-60-1.png",
+      "/images/7-magnesios-x-60-2.png"
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "probioticos-homeopaticos",
+    "name": "Probióticos homeopáticos",
+    "description": "Descripción temporal para Probióticos homeopáticos. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Probióticos homeopáticos. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres",
+      "infantil",
+      "metabolismo",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 22,
+    "slug": "probioticos-gomitas",
+    "name": "Probióticos gomitas",
+    "description": "Descripción temporal para Probióticos gomitas. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Probióticos gomitas. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "infantil",
+      "metabolismo",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/probioticos-gomitas.png"
+  },
+  {
+    "id": 23,
+    "slug": "berberine-x-100-cap",
+    "name": "Berberine x 100 cap",
+    "description": "Descripción temporal para Berberine x 100 cap. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Berberine x 100 cap. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "metabolismo",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 24,
+    "slug": "vinagre-de-manzana-gomitas",
+    "name": "Vinagre de manzana gomitas",
+    "description": "Descripción temporal para Vinagre de manzana gomitas. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Vinagre de manzana gomitas. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "metabolismo"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/vinagre-de-manzana-gomitas.png"
+  },
+  {
+    "id": 25,
+    "slug": "dtox-x-60-und",
+    "name": "DTOX x 60 und",
+    "description": "Descripción temporal para DTOX x 60 und. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para DTOX x 60 und. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "metabolismo"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/dtox-x-60-und.png"
+  },
+  {
+    "id": 26,
+    "slug": "cardo-mariano-x-90-cap",
+    "name": "Cardo mariano x 90 cap",
+    "description": "Descripción temporal para Cardo mariano x 90 cap. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Cardo mariano x 90 cap. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "metabolismo",
+      "adulto"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 27,
+    "slug": "remolacha-x-60-und",
+    "name": "Remolacha x 60 und",
+    "description": "Descripción temporal para Remolacha x 60 und. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Remolacha x 60 und. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "metabolismo",
+      "deportiva"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/remolacha-x-60-und-1.png",
+    "gallery": [
+      "/images/remolacha-x-60-und-1.png",
+      "/images/remolacha-x-60-und-2.png"
+    ]
+  },
+  {
+    "id": 28,
+    "slug": "oregano-plus",
+    "name": "Oregano Plus",
+    "description": "Descripción temporal para Orégano x 60 und. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Orégano x 60 und. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "metabolismo"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/oregano-plus.png"
+  },
+  {
+    "id": 29,
+    "slug": "creatine-vegan-300-gr",
+    "name": "Creatine Vegan 300 gr",
+    "description": "Descripción temporal para Creatine Vegan 300 gr. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Creatine Vegan 300 gr. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "deportiva"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 30,
+    "slug": "creatine-bhella-300-gr",
+    "name": "Creatine Bhella 300 gr",
+    "description": "Descripción temporal para Creatine Bhella 300 gr. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Creatine Bhella 300 gr. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "deportiva"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/placeholder.png"
+  },
+  {
+    "id": 31,
+    "slug": "melena-de-leon",
+    "name": "Melena de León",
+    "description": "Descripción temporal para Melena de León. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Melena de León. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "energia",
+      "salud"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/melena-de-leon.png"
+  },
+  {
+    "id": 32,
+    "slug": "probioticos-femeninos",
+    "name": "Probióticos Femeninos",
+    "description": "Descripción temporal para Probióticos Femeninos. Luego se actualizará.",
+    "longDescription": "Esta es la información detallada para Probióticos Femeninos. Más adelante se actualizará con información real y detallada de los beneficios y uso.",
+    "benefits": [
+      "Salud íntima femenina",
+      "Equilibrio de la flora vaginal",
+      "Refuerza el sistema inmunológico"
+    ],
+    "ingredients": [
+      "Lactobacillus rhamnosus",
+      "Lactobacillus reuteri"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza",
+      "hormonal"
+    ],
+    "badge": "Nuevo",
+    "rating": 5.0,
+    "reviews": 0,
+    "image": "/images/probioticos-femeninos.png"
   }
-]
+];

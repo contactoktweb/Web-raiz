@@ -2,92 +2,82 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Zap, Heart, Activity, Baby, Star, Moon, Shield } from "lucide-react"
+import { ArrowRight, Zap, Heart, Activity, Leaf, Baby } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const categories = [
   {
-    id: "belleza",
-    icon: Star,
-    title: "Belleza y Anti-edad",
+    id: "energia",
+    icon: Zap,
+    title: "Energía y Sistema Nervioso",
     description:
-      "Nutrición profunda para piel, cabello y uñas. Porque la verdadera belleza comienza desde el interior.",
-    products: ["Colágeno Hidrolizado", "Resveratrol", "Biotina", "Vitamina E"],
+      "Recupera tu vitalidad y equilibra tu sistema nervioso con suplementos naturales respaldados por la ciencia.",
+    products: [
+      "Magnesio",
+      "Complejo B",
+      "Omega 3",
+      "Ashwagandha",
+      "Melena de León",
+    ],
     color: "bg-secondary/10",
     iconColor: "text-secondary",
     borderColor: "border-secondary/20",
   },
   {
-    id: "hormonal",
+    id: "adulto-mayor",
     icon: Heart,
-    title: "Salud Hormonal",
+    title: "Salud del Adulto Mayor",
     description:
-      "Equilibrio natural para cada etapa. Regula tu ciclo y bienestar emocional con adaptógenos específicos.",
-    products: ["Maca Peruana", "Aceite de Onagra", "Sauzgatillo", "Isoflavonas"],
+      "Fortalece músculos, huesos y mente con nutrientes esenciales para una vida activa y plena.",
+    products: ["Proteínas", "Creatina", "Vitamina D", "Vitamina B12"],
+    color: "bg-accent/10",
+    iconColor: "text-accent",
+    borderColor: "border-accent/20",
+  },
+  {
+    id: "hormonal",
+    icon: Activity,
+    title: "Equilibrio Hormonal",
+    description:
+      "Restaura tu balance hormonal de forma natural con minerales y adaptógenos cuidadosamente seleccionados.",
+    products: ["Zinc", "Adaptógenos naturales"],
     color: "bg-primary/10",
     iconColor: "text-primary",
     borderColor: "border-primary/20",
   },
   {
-    id: "estres",
-    icon: Moon,
-    title: "Estrés e Insomnio",
+    id: "digestiva",
+    icon: Leaf,
+    title: "Salud Metabólica y Digestiva",
     description:
-      "Recupera tu calma y descanso reparador. Fórmulas para relajar el sistema nervioso sin generar dependencia.",
-    products: ["Ashwagandha", "Magnesio", "Melatonina", "Pasiflora"],
-    color: "bg-accent/10",
-    iconColor: "text-accent",
-    borderColor: "border-accent/20",
+      "Optimiza tu digestión y metabolismo con fibra, probióticos y extractos herbales de alta calidad.",
+    products: [
+      "Fibra prebiótica",
+      "Probióticos",
+      "Berberina",
+      "Cardo Mariano",
+      "Espirulina",
+    ],
+    color: "bg-secondary/10",
+    iconColor: "text-secondary",
+    borderColor: "border-secondary/20",
   },
   {
     id: "infantil",
     icon: Baby,
-    title: "Salud Infantil",
+    title: "Desarrollo Infantil",
     description:
-      "Apoyo nutricional seguro para el crecimiento, las defensas y la concentración de los más pequeños.",
-    products: ["Multivitamínico Kids", "Omega 3 DHA", "Probióticos Kids", "Zinc"],
-    color: "bg-secondary/10",
-    iconColor: "text-secondary",
-    borderColor: "border-secondary/20",
-  },
-  {
-    id: "metabolismo",
-    icon: Activity,
-    title: "Metabolismo y Digestión",
-    description:
-      "Reactiva tu energía y digestión. Soluciones para optimizar el metabolismo y la salud intestinal.",
-    products: ["Vinagre de Manzana", "Probióticos", "Té Verde", "Fibra Prebiótica"],
-    color: "bg-primary/10",
-    iconColor: "text-primary",
-    borderColor: "border-primary/20",
-  },
-  {
-    id: "deportiva",
-    icon: Zap,
-    title: "Salud Deportiva",
-    description:
-      "Potencia tu rendimiento y recuperación. Suplementación limpia para deportistas y vida activa.",
-    products: ["Creatina Monohidratada", "Proteína Whey", "BCAA", "Electrolitos"],
+      "Apoya el crecimiento, la concentración y el bienestar de tus hijos con nutrientes esenciales.",
+    products: ["Omega 3 DHA", "Magnesio infantil"],
     color: "bg-accent/10",
     iconColor: "text-accent",
     borderColor: "border-accent/20",
-  },
-  {
-    id: "adulto",
-    icon: Shield,
-    title: "Adulto Mayor",
-    description:
-      "Vitalidad y protección. Nutrientes esenciales para huesos fuertes, memoria y salud cardiovascular.",
-    products: ["Calcio + D3", "Glucosamina", "Ginkgo Biloba", "Omega 3"],
-    color: "bg-secondary/10",
-    iconColor: "text-secondary",
-    borderColor: "border-secondary/20",
   },
 ]
 
 export function BenefitsSection() {
   const [activeCategory, setActiveCategory] = useState(categories[0].id)
-  const activeItem = categories.find((c) => c.id === activeCategory) || categories[0]
+  const activeItem = categories.find((c) => c.id === activeCategory)!
 
   return (
     <section id="tienda" className="bg-card py-20 lg:py-28">

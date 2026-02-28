@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: product.description,
     keywords: [
       product.name,
-      product.category,
+      ...product.category,
       "suplemento natural",
       "tienda naturista",
       "salud",
@@ -51,7 +51,7 @@ export default async function ProductPage({ params }: Props) {
   if (!product) notFound()
 
   const related = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
+    .filter((p) => p.category.some(c => product.category.includes(c)) && p.id !== product.id)
     .slice(0, 3)
 
   return (

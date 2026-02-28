@@ -103,21 +103,21 @@ export function BlogPreview() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     sizes="(max-width: 1024px) 100vw, 58vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
                   {/* Content overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-10">
-                    <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground">
+                    <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground shadow-sm">
                       {featured.category}
                     </span>
-                    <h3 className="mt-3 font-serif text-2xl font-bold leading-tight text-primary-foreground lg:text-3xl xl:text-4xl text-balance">
+                    <h3 className="mt-3 font-serif text-2xl font-bold leading-tight text-white lg:text-3xl xl:text-4xl text-balance drop-shadow-md">
                       {featured.title}
                     </h3>
-                    <p className="mt-3 max-w-lg text-sm leading-relaxed text-primary-foreground/70 lg:text-base">
+                    <p className="mt-3 max-w-lg text-sm leading-relaxed text-gray-200 lg:text-base drop-shadow-sm">
                       {featured.excerpt}
                     </p>
                     <div className="mt-5 flex items-center gap-4">
-                      <div className="flex items-center gap-2 text-xs text-primary-foreground/50">
+                      <div className="flex items-center gap-2 text-xs text-gray-300">
                         <Clock className="h-3.5 w-3.5" />
                         <span>{featured.readTime} de lectura</span>
                       </div>

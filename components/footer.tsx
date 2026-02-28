@@ -30,7 +30,7 @@ export function Footer() {
                 alt="Raíz Vital Logo Blanco"
                 width={80}
                 height={80}
-                className="object-contain"
+                className="object-contain brightness-0 invert"
               />
             </div>
             <p className="text-sm leading-relaxed text-primary-foreground/70">
@@ -111,18 +111,27 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center gap-2 border-t border-primary-foreground/10 pt-8 text-center">
-          <p className="text-sm text-primary-foreground/60">
+        <div className="mt-12 flex flex-col items-center gap-4 border-t border-primary-foreground/10 pt-8 text-center sm:flex-row sm:justify-between sm:text-left">
+          <p className="text-sm text-primary-foreground/60 w-full sm:w-auto text-center">
             {new Date().getFullYear()} Raíz Vital. Todos los derechos reservados.
           </p>
-          <a
-            href="https://www.kytcode.lat"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground flex items-center justify-center gap-1"
-          >
-            Desarrollado por K&T 🤍
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm w-full sm:w-auto justify-center sm:justify-end">
+            <Link
+              href="/politica-de-datos"
+              className="text-primary-foreground/60 transition-colors hover:text-primary-foreground underline underline-offset-4"
+            >
+              Política de Tratamiento de Datos
+            </Link>
+            <span className="hidden sm:inline text-primary-foreground/20">•</span>
+            <a
+              href="https://www.kytcode.lat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/60 transition-colors hover:text-primary-foreground flex items-center justify-center gap-1"
+            >
+              Desarrollado por K&T 🤍
+            </a>
+          </div>
         </div>
       </div>
     </footer>

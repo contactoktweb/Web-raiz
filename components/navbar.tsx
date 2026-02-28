@@ -44,8 +44,8 @@ export function Navbar({ transparentLight = false }: NavbarProps) {
           <Image
             src="/logo-oficial.png"
             alt="Raíz Vital Logo"
-            width={72}
-            height={72}
+            width={96}
+            height={96}
             priority
             className="object-contain transition-all"
           />
