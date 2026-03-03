@@ -86,7 +86,7 @@ export function TiendaContent({ products, categories: sanityCategories }: Props)
   const categoriesList = [
     { id: "all", label: "Todos", icon: null },
     ...sanityCategories.map(cat => ({
-      id: cat.slug,
+      id: cat.title,
       label: cat.title,
       icon: categoryIconMap[cat.slug] || Activity
     }))
@@ -188,6 +188,7 @@ export function TiendaContent({ products, categories: sanityCategories }: Props)
                   fill
                   className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={95}
                   priority
                 />
                 <div className="absolute top-4 left-4 lg:top-6 lg:left-6">
@@ -314,8 +315,9 @@ export function TiendaContent({ products, categories: sanityCategories }: Props)
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="object-contain p-6 lg:p-8 transition-transform duration-700 ease-out group-hover:scale-[1.08]"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={90}
                 />
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex items-center justify-center bg-primary/0 transition-all duration-300 group-hover:bg-primary/20">

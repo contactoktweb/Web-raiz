@@ -90,6 +90,7 @@ export function StoreSection({ data }: StoreSectionProps) {
                                         fill
                                         className="object-contain p-6 lg:p-8 transition-transform duration-700 ease-in-out group-hover:scale-110"
                                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                                        quality={90}
                                     />
 
                                     {/* Hover overlay */}

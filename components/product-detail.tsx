@@ -97,7 +97,9 @@ export function ProductDetail({ product, related, whatsappNumber = "573001234567
                 src={allImages[selectedImage] || product.image}
                 alt={product.name}
                 fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                className="object-contain transition-transform duration-700 ease-out group-hover:scale-105"
+                quality={95}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
               {product.badge && (
@@ -127,6 +129,8 @@ export function ProductDetail({ product, related, whatsappNumber = "573001234567
                       alt={`${product.name} - vista ${i + 1}`}
                       fill
                       className="object-contain p-1.5"
+                      sizes="80px"
+                      quality={85}
                     />
                   </button>
                 ))}
