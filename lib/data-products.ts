@@ -39,12 +39,11 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/megacollagen-x-500-gr-1.png",
+    "image": "/images/megacollagen-x-500-gr.png",
     "gallery": [
-      "/images/megacollagen-x-500-gr-1.png",
-      "/images/megacollagen-x-500-gr-2.png"
+      "/images/megacollagen-x-500-gr.png"
     ]
   },
   {
@@ -69,9 +68,12 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/colageno-x-24-sachets.png",
+    "gallery": [
+      "/images/colageno-x-24-sachets.png"
+    ]
   },
   {
     "id": 3,
@@ -95,9 +97,12 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/colageno-marino-x-700-gr.png",
+    "gallery": [
+      "/images/colageno-marino-x-700-gr.png"
+    ]
   },
   {
     "id": 4,
@@ -121,9 +126,12 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/5-colageno-x-60-pastillas.png",
+    "gallery": [
+      "/images/5-colageno-x-60-pastillas.png"
+    ]
   },
   {
     "id": 5,
@@ -147,12 +155,11 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/nat-resveratrol-x-100-1.png",
+    "image": "/images/nat-resveratrol-x-100.png",
     "gallery": [
-      "/images/nat-resveratrol-x-100-1.png",
-      "/images/nat-resveratrol-x-100-2.png"
+      "/images/nat-resveratrol-x-100.png"
     ]
   },
   {
@@ -177,9 +184,12 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/nat-resveratrol-funda.png",
+    "gallery": [
+      "/images/nat-resveratrol-funda.png"
+    ]
   },
   {
     "id": 7,
@@ -202,9 +212,12 @@ export const products: Product[] = [
       "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/vitafrancesa-x-24-sachet.png",
+    "gallery": [
+      "/images/vitafrancesa-x-24-sachet.png"
+    ]
   },
   {
     "id": 8,
@@ -227,9 +240,12 @@ export const products: Product[] = [
       "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/cranberry-x-60-und.png"
+    "image": "/images/cranberry-x-60-und.png",
+    "gallery": [
+      "/images/cranberry-x-60-und.png"
+    ]
   },
   {
     "id": 9,
@@ -253,9 +269,12 @@ export const products: Product[] = [
       "hormonal"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/urofem-probioticos-x-60-gomitas.png",
+    "gallery": [
+      "/images/urofem-probioticos-x-60-gomitas.png"
+    ]
   },
   {
     "id": 10,
@@ -276,12 +295,16 @@ export const products: Product[] = [
     "price": 0,
     "category": [
       "hormonal",
-      "estres"
+      "estres",
+      "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/ashwagandha-homeopatica.png",
+    "gallery": [
+      "/images/ashwagandha-homeopatica.png"
+    ]
   },
   {
     "id": 11,
@@ -301,15 +324,15 @@ export const products: Product[] = [
     "howToUse": "Consumir según las indicaciones del envase.",
     "price": 0,
     "category": [
-      "hormonal"
+      "hormonal",
+      "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/fenogreco-x-60-pastillas-1.png",
+    "image": "/images/fenogreco-x-60-pastillas.png",
     "gallery": [
-      "/images/fenogreco-x-60-pastillas-1.png",
-      "/images/fenogreco-x-60-pastillas-2.png"
+      "/images/fenogreco-x-60-pastillas.png"
     ]
   },
   {
@@ -331,12 +354,16 @@ export const products: Product[] = [
     "price": 0,
     "category": [
       "hormonal",
-      "deportiva"
+      "deportiva",
+      "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/shilajit.png",
+    "gallery": [
+      "/images/shilajit.png"
+    ]
   },
   {
     "id": 13,
@@ -358,12 +385,16 @@ export const products: Product[] = [
     "category": [
       "hormonal",
       "infantil",
-      "deportiva"
+      "deportiva",
+      "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/seven-7-sachets.png",
+    "gallery": [
+      "/images/seven-7-sachets.png"
+    ]
   },
   {
     "id": 14,
@@ -383,12 +414,16 @@ export const products: Product[] = [
     "howToUse": "Consumir según las indicaciones del envase.",
     "price": 0,
     "category": [
-      "hormonal"
+      "hormonal",
+      "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/bichota-sachets.png",
+    "gallery": [
+      "/images/bichota-sachets.png"
+    ]
   },
   {
     "id": 15,
@@ -410,12 +445,16 @@ export const products: Product[] = [
     "category": [
       "hormonal",
       "infantil",
-      "adulto"
+      "adulto",
+      "belleza"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/vitamina-c-plus-zinc-gomitas.png",
+    "gallery": [
+      "/images/vitamina-c-plus-zinc-gomitas.png"
+    ]
   },
   {
     "id": 16,
@@ -439,9 +478,12 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/melatonin-gomitas.png",
+    "gallery": [
+      "/images/melatonin-gomitas.png"
+    ]
   },
   {
     "id": 17,
@@ -464,7 +506,7 @@ export const products: Product[] = [
       "estres"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/placeholder.png"
   },
@@ -491,7 +533,7 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/placeholder.png"
   },
@@ -518,9 +560,12 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/bisglicinato-de-magnesio-x-60.png",
+    "gallery": [
+      "/images/bisglicinato-de-magnesio-x-60.png"
+    ]
   },
   {
     "id": 20,
@@ -545,12 +590,11 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/7-magnesios-x-60-1.png",
+    "image": "/images/7-magnesios-x-60.png",
     "gallery": [
-      "/images/7-magnesios-x-60-1.png",
-      "/images/7-magnesios-x-60-2.png"
+      "/images/7-magnesios-x-60.png"
     ]
   },
   {
@@ -577,7 +621,7 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/placeholder.png"
   },
@@ -604,9 +648,13 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/probioticos-gomitas.png"
+    "image": "/images/probioticos-gomitas-2.png",
+    "gallery": [
+      "/images/probioticos-gomitas-2.png",
+      "/images/probioticos-gomitas.png"
+    ]
   },
   {
     "id": 23,
@@ -630,9 +678,13 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/placeholder.png"
+    "image": "/images/berberine-x-100-cap.jpg",
+    "gallery": [
+      "/images/berberine-x-100-cap.jpg",
+      "/images/placeholder.png"
+    ]
   },
   {
     "id": 24,
@@ -655,9 +707,12 @@ export const products: Product[] = [
       "metabolismo"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/vinagre-de-manzana-gomitas.png"
+    "image": "/images/vinagre-de-manzana-gomitas.png",
+    "gallery": [
+      "/images/vinagre-de-manzana-gomitas.png"
+    ]
   },
   {
     "id": 25,
@@ -680,9 +735,12 @@ export const products: Product[] = [
       "metabolismo"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/dtox-x-60-und.png"
+    "image": "/images/dtox-x-60-und.png",
+    "gallery": [
+      "/images/dtox-x-60-und.png"
+    ]
   },
   {
     "id": 26,
@@ -706,7 +764,7 @@ export const products: Product[] = [
       "adulto"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/placeholder.png"
   },
@@ -732,10 +790,11 @@ export const products: Product[] = [
       "deportiva"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/remolacha-x-60-und-1.png",
+    "image": "/images/remolacha-x-60-und.png",
     "gallery": [
+      "/images/remolacha-x-60-und.png",
       "/images/remolacha-x-60-und-1.png",
       "/images/remolacha-x-60-und-2.png"
     ]
@@ -761,9 +820,13 @@ export const products: Product[] = [
       "metabolismo"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
-    "image": "/images/oregano-plus.png"
+    "image": "/images/oregano-x-60-und.png",
+    "gallery": [
+      "/images/oregano-x-60-und.png",
+      "/images/oregano-plus.png"
+    ]
   },
   {
     "id": 29,
@@ -786,7 +849,7 @@ export const products: Product[] = [
       "deportiva"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/placeholder.png"
   },
@@ -811,7 +874,7 @@ export const products: Product[] = [
       "deportiva"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/placeholder.png"
   },
@@ -837,7 +900,7 @@ export const products: Product[] = [
       "salud"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/melena-de-leon.png"
   },
@@ -863,8 +926,204 @@ export const products: Product[] = [
       "hormonal"
     ],
     "badge": "Nuevo",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 0,
     "image": "/images/probioticos-femeninos.png"
+  },
+  {
+    "id": 33,
+    "slug": "omega-3",
+    "name": "Omega 3",
+    "description": "Descripción para Omega 3.",
+    "longDescription": "Esta es la información detallada para Omega 3.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza"
+    ],
+    "badge": "Nuevo",
+    "rating": 5,
+    "reviews": 0,
+    "image": "/images/omega-3.png",
+    "gallery": [
+      "/images/omega-3.png"
+    ]
+  },
+  {
+    "id": 34,
+    "slug": "isoflavonas-de-soya",
+    "name": "Isoflavonas de soya",
+    "description": "Descripción para Isoflavonas de soya.",
+    "longDescription": "Esta es la información detallada para Isoflavonas de soya.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza"
+    ],
+    "badge": "Nuevo",
+    "rating": 5,
+    "reviews": 0,
+    "image": "/images/isoflavonas-de-soya.png",
+    "gallery": [
+      "/images/isoflavonas-de-soya.png"
+    ]
+  },
+  {
+    "id": 35,
+    "slug": "probioticos",
+    "name": "Probioticos",
+    "description": "Descripción para Probioticos.",
+    "longDescription": "Esta es la información detallada para Probioticos.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "belleza"
+    ],
+    "badge": "Nuevo",
+    "rating": 5,
+    "reviews": 0,
+    "image": "/images/probioticos.png",
+    "gallery": [
+      "/images/probioticos.png"
+    ]
+  },
+  {
+    "id": 36,
+    "slug": "triptofano",
+    "name": "triptófano",
+    "description": "Descripción para triptófano.",
+    "longDescription": "Esta es la información detallada para triptófano.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres"
+    ],
+    "badge": "Nuevo",
+    "rating": 5,
+    "reviews": 0,
+    "image": "/images/triptofano.png",
+    "gallery": [
+      "/images/triptofano.png"
+    ]
+  },
+  {
+    "id": 37,
+    "slug": "ashwagandha",
+    "name": "Ashwagandha",
+    "description": "Descripción para Ashwagandha.",
+    "longDescription": "Esta es la información detallada para Ashwagandha.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "estres"
+    ],
+    "badge": "Nuevo",
+    "rating": 5,
+    "reviews": 0,
+    "image": "/images/ashwagandha.png",
+    "gallery": [
+      "/images/ashwagandha.png"
+    ]
+  },
+  {
+    "id": 38,
+    "slug": "multivitaminico",
+    "name": "Multivitaminico",
+    "description": "Descripción para Multivitaminico.",
+    "longDescription": "Esta es la información detallada para Multivitaminico.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "infantil"
+    ],
+    "badge": "Nuevo",
+    "rating": 5,
+    "reviews": 0,
+    "image": "/images/multivitaminico.png",
+    "gallery": [
+      "/images/multivitaminico.png"
+    ]
+  },
+  {
+    "id": 39,
+    "slug": "clorofila",
+    "name": "Clorofila",
+    "description": "Descripción para Clorofila.",
+    "longDescription": "Esta es la información detallada para Clorofila.",
+    "benefits": [
+      "Beneficio 1",
+      "Beneficio 2",
+      "Beneficio 3"
+    ],
+    "ingredients": [
+      "Ingrediente principal",
+      "Ingrediente secundario"
+    ],
+    "howToUse": "Consumir según las indicaciones del envase.",
+    "price": 0,
+    "category": [
+      "metabolismo"
+    ],
+    "badge": "Nuevo",
+    "rating": 5,
+    "reviews": 0,
+    "image": "/images/clorofila.png",
+    "gallery": [
+      "/images/clorofila.png"
+    ]
   }
-];
+]

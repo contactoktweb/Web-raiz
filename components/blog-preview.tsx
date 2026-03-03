@@ -4,11 +4,21 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Clock } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
-import { blogPosts } from "@/lib/data-blog"
 
+interface BlogPost {
+  title: string
+  slug: string
+  excerpt: string
+  category: string
+  readTime: string
+  image: string
+}
 
+interface BlogPreviewProps {
+  posts?: BlogPost[]
+}
 
-export function BlogPreview() {
+export function BlogPreview({ posts = [] }: BlogPreviewProps) {
   const [visible, setVisible] = useState(false)
   const ref = useRef<HTMLElement>(null)
 
@@ -25,8 +35,10 @@ export function BlogPreview() {
     return () => observer.disconnect()
   }, [])
 
-  const featured = blogPosts[0]
-  const rest = blogPosts.slice(1, 4)
+  if (posts.length === 0) return null
+
+  const featured = posts[0]
+  const rest = posts.slice(1, 4)
 
   return (
     <section ref={ref} className="bg-background py-24 lg:py-32">

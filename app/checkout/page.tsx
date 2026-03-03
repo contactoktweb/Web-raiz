@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import type { Metadata } from "next"
-import { Navbar } from "@/components/navbar"
+import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { CheckoutContent } from "@/components/checkout-content"
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function CheckoutPage() {
   return (
     <>
-      <Navbar />
+      <SiteHeader />
       <main className="min-h-screen bg-muted/30">
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Cargando...</div>}>
           <CheckoutContent />

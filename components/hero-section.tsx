@@ -6,11 +6,29 @@ import { ArrowRight, Calendar, Leaf } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 
-const WHATSAPP_NUMBER = "573001234567"
-const ASESORIA_MESSAGE =
-  "Hola, me gustaría agendar una asesoría personalizada con Raíz Vital."
+interface HeroData {
+  badge?: string
+  headlineLine1?: string
+  headlineLine2Part1?: string
+  headlineLine2Part2?: string
+  mainImageUrl?: string
+  mainImageAlt?: string
+  mainImageText?: string
+  ingredientsImageUrl?: string
+  ingredientsImageAlt?: string
+  naturalBadge?: string
+  statsNumber?: string
+  statsDescription?: string
+  productTeaserImageUrl?: string
+  productTeaserImageAlt?: string
+  productTeaserText?: string
+  trustStrip?: string[]
+}
 
-export function HeroSection() {
+export function HeroSection({ data }: { data?: HeroData }) {
+  const WHATSAPP_NUMBER = "573001234567"
+  const ASESORIA_MESSAGE =
+    "Hola, me gustaría agendar una asesoría personalizada con Raíz Vital."
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(ASESORIA_MESSAGE)}`
   const [mounted, setMounted] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
@@ -34,10 +52,9 @@ export function HeroSection() {
   }, [])
 
   const anim = (delay: number) =>
-    `transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-      mounted
-        ? "translate-y-0 opacity-100"
-        : "translate-y-10 opacity-0"
+    `transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${mounted
+      ? "translate-y-0 opacity-100"
+      : "translate-y-10 opacity-0"
     }` + ` delay-[${delay}ms]`
 
   return (
@@ -79,7 +96,7 @@ export function HeroSection() {
           <div className="flex items-center gap-3">
             <div className="h-px w-12 bg-secondary" />
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-secondary">
-              Raíz Vital | Salud natural y consciente
+              {data?.badge || "Raíz Vital | Salud natural y consciente"}
             </span>
           </div>
         </div>
@@ -89,11 +106,11 @@ export function HeroSection() {
           className={`${mounted ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"} transition-all duration-[1200ms] delay-100`}
         >
           <h1 className="font-serif text-[clamp(2.8rem,8vw,7.5rem)] font-bold leading-[0.92] tracking-tight text-primary">
-            <span className="block">Tu bienestar</span>
+            <span className="block">{data?.headlineLine1 || "Tu bienestar"}</span>
             <span className="flex items-baseline gap-4 lg:gap-6">
-              <span className="text-secondary">merece</span>
+              <span className="text-secondary">{data?.headlineLine2Part1 || "merece"}</span>
               <span className="relative inline-block">
-                raíces
+                {data?.headlineLine2Part2 || "raíces"}
                 {/* Animated botanical underline */}
                 <svg
                   className={`absolute -bottom-1 left-0 w-full transition-all duration-[1500ms] delay-500 ${mounted ? "opacity-100" : "opacity-0"}`}
@@ -128,8 +145,8 @@ export function HeroSection() {
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:rounded-3xl">
               <Image
-                src="/images/hero-woman.jpg"
-                alt="Mujer en armonía con la naturaleza"
+                src={data?.mainImageUrl || "/images/hero-woman.jpg"}
+                alt={data?.mainImageAlt || "Mujer en armonía con la naturaleza"}
                 fill
                 priority
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
@@ -142,9 +159,7 @@ export function HeroSection() {
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 lg:bottom-8 lg:left-8 lg:right-8">
                 <div>
                   <p className="max-w-sm text-lg font-medium leading-snug text-primary-foreground lg:text-xl">
-                    No existen fórmulas genéricas. Tu cuerpo merece una
-                    orientación{" "}
-                    <span className="font-serif italic">personalizada.</span>
+                    {data?.mainImageText || "No existen fórmulas genéricas. Tu cuerpo merece una orientación personalizada."}
                   </p>
                 </div>
                 <a
@@ -174,8 +189,8 @@ export function HeroSection() {
             >
               <div className="relative h-full min-h-[200px] overflow-hidden rounded-2xl lg:rounded-3xl">
                 <Image
-                  src="/images/hero-ingredients.jpg"
-                  alt="Ingredientes naturales premium"
+                  src={data?.ingredientsImageUrl || "/images/hero-ingredients.jpg"}
+                  alt={data?.ingredientsImageAlt || "Ingredientes naturales premium"}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   sizes="(max-width: 768px) 100vw, 42vw"
@@ -184,7 +199,7 @@ export function HeroSection() {
                 <div className="absolute top-5 left-5 lg:top-6 lg:left-6">
                   <span className="inline-flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary backdrop-blur-sm">
                     <Leaf className="h-3.5 w-3.5 text-secondary" />
-                    100% Natural
+                    {data?.naturalBadge || "100% Natural"}
                   </span>
                 </div>
               </div>
@@ -199,10 +214,10 @@ export function HeroSection() {
                 <div className="flex h-full flex-col justify-between rounded-2xl bg-primary p-5 lg:rounded-3xl lg:p-6">
                   <div>
                     <p className="font-serif text-4xl font-bold text-primary-foreground lg:text-5xl">
-                      +500
+                      {data?.statsNumber || "+500"}
                     </p>
                     <p className="mt-1 text-sm leading-snug text-primary-foreground/60">
-                      Vidas transformadas con nuestro acompañamiento
+                      {data?.statsDescription || "Vidas transformadas con nuestro acompañamiento"}
                     </p>
                   </div>
                   <div className="mt-4 flex -space-x-2">
@@ -234,8 +249,8 @@ export function HeroSection() {
                   <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card lg:rounded-3xl">
                     <div className="relative flex-1 overflow-hidden">
                       <Image
-                        src="/images/hero-product.jpg"
-                        alt="Producto natural Raíz Vital"
+                        src={data?.productTeaserImageUrl || "/images/hero-product.jpg"}
+                        alt={data?.productTeaserImageAlt || "Producto natural Raíz Vital"}
                         fill
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                         sizes="(max-width: 768px) 50vw, 20vw"
@@ -243,7 +258,7 @@ export function HeroSection() {
                     </div>
                     <div className="flex items-center justify-between gap-2 p-4 lg:p-5">
                       <span className="text-sm font-semibold text-primary">
-                        Ver Tienda
+                        {data?.productTeaserText || "Ver Tienda"}
                       </span>
                       <ArrowRight className="h-4 w-4 text-secondary transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
@@ -259,12 +274,12 @@ export function HeroSection() {
           className={`mt-12 flex flex-wrap items-center justify-between gap-6 border-t border-border pt-8 lg:mt-16 lg:pt-10 ${mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"} transition-all duration-[1200ms] delay-700`}
         >
           <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
-            {[
+            {(data?.trustStrip || [
               "Envío Nacional",
               "Asesoría Gratis",
               "Ingredientes Puros",
               "Resultados Reales",
-            ].map((item, i) => (
+            ]).map((item, i) => (
               <div key={item} className="flex items-center gap-2.5">
                 <div className="flex h-2 w-2 items-center justify-center rounded-full bg-secondary" />
                 <span className="text-sm font-medium text-foreground/60">

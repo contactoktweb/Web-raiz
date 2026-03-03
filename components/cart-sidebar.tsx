@@ -70,7 +70,7 @@ export function CartSidebar() {
                     ) : (
                         <div className="flex flex-col gap-6 py-4">
                             {items.map((item) => (
-                                <div key={item.product.id} className="flex gap-4">
+                                <div key={item.product._id} className="flex gap-4">
                                     <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-md border border-border bg-muted">
                                         <Image
                                             src={item.product.image}
@@ -85,7 +85,7 @@ export function CartSidebar() {
                                                 {item.product.name}
                                             </h4>
                                             <button
-                                                onClick={() => removeItem(item.product.id)}
+                                                onClick={() => removeItem(item.product._id)}
                                                 className="text-muted-foreground hover:text-destructive"
                                             >
                                                 <Trash2 className="h-4 w-4" />
@@ -94,7 +94,7 @@ export function CartSidebar() {
                                         <div className="flex items-end justify-between">
                                             <div className="flex items-center rounded-md border border-border">
                                                 <button
-                                                    onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                                                    onClick={() => updateQuantity(item.product._id, item.quantity - 1)}
                                                     className="flex h-7 w-7 items-center justify-center text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                                                 >
                                                     <Minus className="h-3 w-3" />
@@ -103,7 +103,7 @@ export function CartSidebar() {
                                                     {item.quantity}
                                                 </span>
                                                 <button
-                                                    onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                                                    onClick={() => updateQuantity(item.product._id, item.quantity + 1)}
                                                     className="flex h-7 w-7 items-center justify-center text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                                                 >
                                                     <Plus className="h-3 w-3" />

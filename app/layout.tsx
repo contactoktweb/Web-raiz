@@ -17,6 +17,7 @@ const oswald = Oswald({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://raizvital.com"),
   title: {
     default: "Raíz Vital — Nutre tu cuerpo, Equilibra tu vida",
     template: "%s | Raíz Vital",
@@ -36,12 +37,36 @@ export const metadata: Metadata = {
     "bienestar",
     "asesoría nutricional personalizada",
   ],
+  authors: [{ name: "K&T" }],
+  creator: "K&T",
+  publisher: "Raíz Vital",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: "Raíz Vital — Nutre tu cuerpo, Equilibra tu vida",
     description:
       "Blog educativo de salud y tienda naturista. Orientación personalizada y productos naturales.",
-    type: "website",
+    url: "https://raizvital.com",
+    siteName: "Raíz Vital",
+    images: [
+      {
+        url: "/logo-oficial.png",
+        width: 1200,
+        height: 630,
+        alt: "Raíz Vital Logo",
+      },
+    ],
     locale: "es_LA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Raíz Vital — Nutre tu cuerpo, Equilibra tu vida",
+    description: "Blog educativo de salud y tienda naturista. Orientación personalizada.",
+    images: ["/logo-oficial.png"],
   },
 }
 
@@ -53,11 +78,17 @@ export const viewport: Viewport = {
   userScalable: true,
 }
 
-export default function RootLayout({
+import { client } from "@/sanity/lib/client"
+import { globalSettingsQuery } from "@/sanity/lib/queries"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const globalSettings = await client.fetch(globalSettingsQuery)
+
   return (
     <html lang="es" className={`${roboto.variable} ${oswald.variable}`}>
       <body className="font-sans antialiased">
@@ -65,6 +96,10 @@ export default function RootLayout({
           {children}
           <CartSidebar />
         </CartProvider>
+        <WhatsAppButton
+          number={globalSettings?.whatsappFloatingNumber}
+          message={globalSettings?.whatsappFloatingMessage}
+        />
         <Analytics />
       </body>
     </html>

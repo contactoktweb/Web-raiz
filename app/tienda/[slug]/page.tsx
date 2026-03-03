@@ -1,67 +1,65 @@
-import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { Navbar } from "@/components/navbar"
+import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
-import { products } from "@/lib/data-products"
 import { ProductDetail } from "@/components/product-detail"
+import { client } from "@/sanity/lib/client"
+import { productBySlugQuery, relatedProductsQuery, globalSettingsQuery } from "@/sanity/lib/queries"
+import { notFound } from "next/navigation"
 
 interface Props {
-  params: Promise<{ slug: string }>
-}
-
-export async function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }))
+  params: Promise<{
+    slug: string
+  }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const product = products.find((p) => p.slug === slug)
-  if (!product) return {}
+  const product = await client.fetch(productBySlugQuery, { slug })
+
+  if (!product) {
+    return {
+      title: "Producto no encontrado | Raiz Vital",
+    }
+  }
+
   return {
-    title: `${product.name} | Raíz Vital`,
+    title: `${product.name} | Raiz Vital`,
     description: product.description,
     keywords: [
       product.name,
-      ...product.category,
+      ...(product.categories || []),
       "suplemento natural",
       "tienda naturista",
       "salud",
-      ...product.benefits,
+      ...(product.benefits || []),
     ],
-    openGraph: {
-      title: `${product.name} - Raíz Vital`,
-      description: product.description,
-      type: "website",
-      images: [
-        {
-          url: product.image,
-          width: 800,
-          height: 800,
-          alt: product.name,
-        },
-      ],
-    },
   }
 }
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params
-  const product = products.find((p) => p.slug === slug)
-  if (!product) notFound()
 
-  const related = products
-    .filter((p) => p.category.some(c => product.category.includes(c)) && p.id !== product.id)
-    .slice(0, 3)
+  const [product, related, globalData] = await Promise.all([
+    client.fetch(productBySlugQuery, { slug }),
+    client.fetch(relatedProductsQuery, { slug }),
+    client.fetch(globalSettingsQuery)
+  ])
+
+  if (!product) {
+    notFound()
+  }
 
   return (
     <>
-      <Navbar />
+      <SiteHeader />
       <main>
-        <ProductDetail product={product} related={related} />
+        <ProductDetail
+          product={product}
+          related={related}
+          whatsappNumber={globalData?.whatsappNumber}
+        />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   )
 }

@@ -22,22 +22,46 @@ import {
   type LucideIcon,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const WHATSAPP_NUMBER = "573001234567"
-
-const categories = [
-  { id: "all", label: "Todos", icon: null },
-  { id: "belleza", label: "Belleza", icon: Star },
-  { id: "hormonal", label: "Salud hormonal", icon: Heart },
-  { id: "estres", label: "Estrés e insomnio", icon: Moon },
-  { id: "infantil", label: "Salud infantil", icon: Baby },
-  { id: "metabolismo", label: "Metabolismo", icon: Activity },
-  { id: "deportiva", label: "Salud deportiva", icon: Zap },
-  { id: "adulto", label: "Adulto mayor", icon: Shield },
-]
-
-import { products, type Product } from '@/lib/data-products'
 import { useCart } from "@/components/cart-provider"
+
+interface Product {
+  _id: string
+  name: string
+  slug: string
+  description: string
+  longDescription: string
+  benefits: string[]
+  ingredients: string[]
+  howToUse: string
+  price: number
+  categories: string[]
+  badge: string | null
+  rating: number
+  reviews: number
+  image: string
+  gallery?: string[]
+}
+
+interface Category {
+  _id: string
+  title: string
+  slug: string
+}
+
+interface Props {
+  products: Product[]
+  categories: Category[]
+}
+
+const categoryIconMap: Record<string, LucideIcon> = {
+  belleza: Star,
+  hormonal: Heart,
+  estres: Moon,
+  infantil: Baby,
+  metabolismo: Activity,
+  deportiva: Zap,
+  adulto: Shield,
+}
 
 const badgeColors: Record<string, string> = {
   "Mas vendido": "bg-secondary text-secondary-foreground",
@@ -57,7 +81,16 @@ function formatPrice(price: number) {
 
 const ITEMS_PER_PAGE = 9
 
-export function TiendaContent() {
+export function TiendaContent({ products, categories: sanityCategories }: Props) {
+  const WHATSAPP_NUMBER = "573001234567" // Keeping this for now until added to global settings or fetched
+  const categoriesList = [
+    { id: "all", label: "Todos", icon: null },
+    ...sanityCategories.map(cat => ({
+      id: cat.slug,
+      label: cat.title,
+      icon: categoryIconMap[cat.slug] || Activity
+    }))
+  ]
   const [activeCategory, setActiveCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
@@ -74,9 +107,20 @@ export function TiendaContent() {
     setCurrentPage(1)
   }, [activeCategory, searchQuery])
 
+  const isFiltering = activeCategory !== "all" || searchQuery.trim() !== ""
+  const featuredProduct = products.find((p) => p.badge === "Mas vendido") || products[0]
+
   const filteredProducts = products.filter((p) => {
-    const matchesCategory = activeCategory === "all" || p.category.includes(activeCategory)
-    const matchesSearch = searchQuery.trim() === "" || p.name.toLowerCase().includes(searchQuery.toLowerCase()) || p.description.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchesCategory = activeCategory === "all" || (p.categories && p.categories.includes(activeCategory))
+    const matchesSearch = searchQuery.trim() === "" ||
+      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (p.description && p.description.toLowerCase().includes(searchQuery.toLowerCase()))
+
+    // Si NO estamos filtrando, queremos que el producto destacado (que sale arriba) no se repita abajo en la grilla
+    if (!isFiltering && featuredProduct && p._id === featuredProduct._id) {
+      return false
+    }
+
     return matchesCategory && matchesSearch
   })
 
@@ -90,8 +134,6 @@ export function TiendaContent() {
     setCurrentPage(page)
     gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
-
-  const featuredProduct = products.find((p) => p.badge === "Mas vendido") || products[0]
 
   return (
     <div>
@@ -135,7 +177,7 @@ export function TiendaContent() {
       </section>
 
       {/* Featured product — editorial hero card */}
-      {featuredProduct && (
+      {!isFiltering && featuredProduct && (
         <section className="relative -mt-12 mx-auto max-w-7xl px-4 lg:px-8 z-10">
           <Link href={`/tienda/${featuredProduct.slug}`}>
             <div className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-primary/5 lg:grid-cols-2 lg:rounded-3xl">
@@ -163,7 +205,7 @@ export function TiendaContent() {
                   {featuredProduct.description}
                 </p>
                 <ul className="mt-5 flex flex-wrap gap-2">
-                  {featuredProduct.benefits.slice(0, 3).map((b) => (
+                  {featuredProduct.benefits?.slice(0, 3).map((b) => (
                     <li
                       key={b}
                       className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-primary"
@@ -213,23 +255,21 @@ export function TiendaContent() {
 
           {/* Category pills */}
           <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => {
+            {categoriesList.map((cat) => {
               const isActive = activeCategory === cat.id
               return (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                    isActive
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-primary"
-                  }`}
+                  className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${isActive
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-primary"
+                    }`}
                 >
                   {cat.icon && (
                     <cat.icon
-                      className={`h-3.5 w-3.5 ${
-                        isActive ? "text-secondary" : ""
-                      }`}
+                      className={`h-3.5 w-3.5 ${isActive ? "text-secondary" : ""
+                        }`}
                     />
                   )}
                   {cat.label}
@@ -259,7 +299,7 @@ export function TiendaContent() {
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {paginatedProducts.map((product, index) => (
             <div
-              key={product.id}
+              key={product._id}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
               style={{
                 animationDelay: `${index * 60}ms`,
@@ -313,9 +353,9 @@ export function TiendaContent() {
                     {formatPrice(product.price)}
                   </span>
                   <Button
-                    onClick={(e) => {
+                    onClick={(e: React.MouseEvent) => {
                       e.preventDefault()
-                      addItem(product)
+                      addItem(product as any)
                     }}
                     size="sm"
                     className="gap-1.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
@@ -357,11 +397,10 @@ export function TiendaContent() {
               <button
                 key={i}
                 onClick={() => handlePageChange(i + 1)}
-                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-all ${
-                  currentPage === i + 1
-                    ? "bg-primary text-primary-foreground shadow-md"
-                    : "border border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-primary"
-                }`}
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-all ${currentPage === i + 1
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "border border-border bg-card text-muted-foreground hover:border-primary/30 hover:text-primary"
+                  }`}
               >
                 {i + 1}
               </button>

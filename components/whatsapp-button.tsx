@@ -1,9 +1,14 @@
 "use client"
 
-const WHATSAPP_NUMBER = "573001234567"
-const DEFAULT_MESSAGE = "Hola, me gustaría recibir más información sobre los productos de Raíz Vital."
+interface WhatsAppButtonProps {
+  number?: string
+  message?: string
+}
 
-export function WhatsAppButton() {
+export function WhatsAppButton({ number, message }: WhatsAppButtonProps) {
+  const WHATSAPP_NUMBER = number || "573001234567"
+  const DEFAULT_MESSAGE = message || "Hola, me gustaría recibir más información sobre los productos de Raíz Vital."
+
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`
 
   return (

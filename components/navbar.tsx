@@ -16,9 +16,11 @@ const navLinks = [
 
 interface NavbarProps {
   transparentLight?: boolean
+  logoUrl?: string
+  logoAlt?: string
 }
 
-export function Navbar({ transparentLight = false }: NavbarProps) {
+export function Navbar({ transparentLight = false, logoUrl = "/logo-oficial.png", logoAlt = "Raíz Vital Logo" }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { itemCount, setIsOpen: setCartOpen } = useCart()
@@ -42,8 +44,8 @@ export function Navbar({ transparentLight = false }: NavbarProps) {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo-oficial.png"
-            alt="Raíz Vital Logo"
+            src={logoUrl}
+            alt={logoAlt}
             width={96}
             height={96}
             priority
