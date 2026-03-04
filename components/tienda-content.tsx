@@ -51,6 +51,7 @@ interface Category {
 interface Props {
   products: Product[]
   categories: Category[]
+  initialCategory?: string
 }
 
 const categoryIconMap: Record<string, LucideIcon> = {
@@ -81,7 +82,7 @@ function formatPrice(price: number) {
 
 const ITEMS_PER_PAGE = 9
 
-export function TiendaContent({ products, categories: sanityCategories }: Props) {
+export function TiendaContent({ products, categories: sanityCategories, initialCategory = "all" }: Props) {
   const WHATSAPP_NUMBER = "573001234567" // Keeping this for now until added to global settings or fetched
   const categoriesList = [
     { id: "all", label: "Todos", icon: null },
@@ -91,12 +92,58 @@ export function TiendaContent({ products, categories: sanityCategories }: Props)
       icon: categoryIconMap[cat.slug] || Activity
     }))
   ]
-  const [activeCategory, setActiveCategory] = useState("all")
+  const resolveInitialCategory = (initStr: string) => {
+    if (!initStr || initStr === "all") return "all"
+    const normalized = initStr.toLowerCase()
+
+    const exact = sanityCategories.find(c => c.title.toLowerCase() === normalized)
+    if (exact) return exact.title // match by exact title
+
+    const keywordMap: Record<string, string> = {
+      'belleza': 'belleza',
+      'hormonal': 'hormonal',
+      'estrés': 'estres',
+      'estres': 'estres',
+      'infantil': 'infantil',
+      'metabolismo': 'metabolismo',
+      'metabólica': 'metabolismo',
+      'digestiv': 'metabolismo',
+      'deport': 'deportiva',
+      'adulto': 'adulto'
+    }
+
+    let matchedSlug = ""
+    for (const [key, slug] of Object.entries(keywordMap)) {
+      if (normalized.includes(key)) {
+        matchedSlug = slug
+        break
+      }
+    }
+
+    if (matchedSlug) {
+      const match = sanityCategories.find(c => c.slug === matchedSlug)
+      if (match) return match.title // match by conceptual slug mapping
+    }
+
+    const loose = sanityCategories.find(c =>
+      normalized.includes(c.title.toLowerCase()) ||
+      c.title.toLowerCase().includes(normalized)
+    )
+    if (loose) return loose.title // match by partial title
+
+    return initStr
+  }
+
+  const [activeCategory, setActiveCategory] = useState(() => resolveInitialCategory(initialCategory))
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [mounted, setMounted] = useState(false)
   const gridRef = useRef<HTMLDivElement>(null)
   const { addItem } = useCart()
+
+  useEffect(() => {
+    setActiveCategory(resolveInitialCategory(initialCategory))
+  }, [initialCategory, sanityCategories])
 
   useEffect(() => {
     setMounted(true)

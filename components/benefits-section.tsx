@@ -122,7 +122,7 @@ export function BenefitsSection({ data }: { data?: BenefitsData }) {
                 <p className="mt-3 max-w-lg leading-relaxed text-muted-foreground">
                   {activeItem.description}
                 </p>
-                <Link href="/tienda" className="mt-6 inline-block">
+                <Link href={`/tienda?category=${encodeURIComponent(activeItem.title)}`} className="mt-6 inline-block">
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
                     Ver Productos
                     <ArrowRight className="h-4 w-4" />
@@ -154,10 +154,10 @@ export function BenefitsSection({ data }: { data?: BenefitsData }) {
             const Icon = iconMap[cat.icon] || Star
             const styles = getThemeStyles(cat.theme)
             return (
-              <div
+              <Link
+                href={`/tienda?category=${encodeURIComponent(cat.title)}`}
                 key={index}
-                className={`group cursor-pointer rounded-2xl border ${styles.borderColor} bg-card p-6 transition-all hover:shadow-lg`}
-                onClick={() => setActiveCategoryIndex(index)}
+                className={`group cursor-pointer block rounded-2xl border ${styles.borderColor} bg-card p-6 transition-all hover:shadow-lg`}
               >
                 <div
                   className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${styles.color}`}
@@ -185,7 +185,7 @@ export function BenefitsSection({ data }: { data?: BenefitsData }) {
                     </span>
                   )}
                 </div>
-              </div>
+              </Link>
             )
           })}
         </div>

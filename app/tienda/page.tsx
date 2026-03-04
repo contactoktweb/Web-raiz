@@ -13,17 +13,28 @@ export const metadata: Metadata = {
     "Productos naturales organizados por beneficios. Suplementos de alta calidad para energia, salud hormonal, digestiva y mas.",
 }
 
-export default async function TiendaPage() {
-  const [products, categories] = await Promise.all([
+export default async function TiendaPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+  const [products, categories, resolvedParams] = await Promise.all([
     client.fetch(allProductsQuery),
-    client.fetch(allCategoriesQuery)
+    client.fetch(allCategoriesQuery),
+    searchParams
   ])
+
+  const initialCategory = typeof resolvedParams.category === 'string' ? resolvedParams.category : 'all'
 
   return (
     <>
       <SiteHeader transparentLight />
       <main>
-        <TiendaContent products={products} categories={categories} />
+        <TiendaContent
+          products={products}
+          categories={categories}
+          initialCategory={initialCategory}
+        />
       </main>
       <Footer />
     </>
