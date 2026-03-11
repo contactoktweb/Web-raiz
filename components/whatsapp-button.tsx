@@ -6,7 +6,8 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({ number, message }: WhatsAppButtonProps) {
-  const WHATSAPP_NUMBER = (number || "573001234567").replace(/\\D/g, "")
+  const cleanNumber = number ? number.replace(/\\D/g, "") : ""
+  const WHATSAPP_NUMBER = cleanNumber.length > 5 ? cleanNumber : "573001234567"
   const DEFAULT_MESSAGE = message || "Hola, me gustaría recibir más información sobre los productos de Raíz Vital."
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`

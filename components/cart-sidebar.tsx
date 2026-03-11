@@ -41,7 +41,8 @@ export function CartSidebar({ whatsappNumber }: CartSidebarProps) {
         const totalText = `Total: ${formatPrice(cartTotal)}`
 
         const message = `Hola, quiero realizar el siguiente pedido:%0A%0A${orderDetails}%0A%0A${totalText}`
-        const finalNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\\D/g, "")
+        const cleanNumber = whatsappNumber ? whatsappNumber.replace(/\\D/g, "") : ""
+        const finalNumber = cleanNumber.length > 5 ? cleanNumber : DEFAULT_WHATSAPP_NUMBER
         const url = `https://wa.me/${finalNumber}?text=${message}`
         window.open(url, "_blank")
         setIsOpen(false)

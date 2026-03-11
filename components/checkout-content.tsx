@@ -70,7 +70,8 @@ export function CheckoutContent({ whatsappNumber }: { whatsappNumber?: string })
 ${formData.notes ? `*Notas:* ${formData.notes}\n` : ""}
 Hola, me gustaría concretar el pago y envío de mi pedido.`
 
-        const finalNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\\D/g, "")
+        const cleanNumber = whatsappNumber ? whatsappNumber.replace(/\\D/g, "") : ""
+        const finalNumber = cleanNumber.length > 5 ? cleanNumber : DEFAULT_WHATSAPP_NUMBER
         const url = `https://wa.me/${finalNumber}?text=${encodeURIComponent(message)}`
         window.open(url, "_blank")
     }

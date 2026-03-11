@@ -46,7 +46,7 @@ export async function Footer() {
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
-              {settings?.whatsappNumber && (
+              {settings?.whatsappNumber && settings.whatsappNumber.replace(/\\D/g, "").length > 5 && (
                 <a
                   href={`https://wa.me/${settings.whatsappNumber.replace(/\\D/g, "")}?text=Hola,%20me%20gustaría%20recibir%20más%20información`}
                   target="_blank"

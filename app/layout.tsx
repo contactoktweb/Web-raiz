@@ -82,6 +82,8 @@ import { client } from "@/sanity/lib/client"
 import { globalSettingsQuery } from "@/sanity/lib/queries"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
+export const revalidate = 60 // Revalidate layout every 60 seconds to fetch new global settings
+
 export default async function RootLayout({
   children,
 }: Readonly<{
