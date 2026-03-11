@@ -2,7 +2,6 @@ import { Suspense } from "react"
 import type { Metadata } from "next"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 import { CheckoutContent } from "@/components/checkout-content"
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ export default function CheckoutPage() {
         </Suspense>
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   )
 }

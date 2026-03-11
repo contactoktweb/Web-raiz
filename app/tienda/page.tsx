@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 import { TiendaContent } from "@/components/tienda-content"
 
 import { client } from "@/sanity/lib/client"
