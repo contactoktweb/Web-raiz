@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { products, type Product } from "@/lib/data-products"
 
-const WHATSAPP_NUMBER = "573001234567"
+const DEFAULT_WHATSAPP_NUMBER = "573001234567"
 
 function formatPrice(price: number) {
     return new Intl.NumberFormat("es-CO", {
@@ -20,7 +20,7 @@ function formatPrice(price: number) {
     }).format(price)
 }
 
-export function CheckoutContent() {
+export function CheckoutContent({ whatsappNumber }: { whatsappNumber?: string }) {
     const router = useRouter()
     const searchParams = useSearchParams()
     const productSlug = searchParams.get("product")
@@ -70,7 +70,8 @@ export function CheckoutContent() {
 ${formData.notes ? `*Notas:* ${formData.notes}\n` : ""}
 Hola, me gustaría concretar el pago y envío de mi pedido.`
 
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+        const finalNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\\D/g, "")
+        const url = `https://wa.me/${finalNumber}?text=${encodeURIComponent(message)}`
         window.open(url, "_blank")
     }
 

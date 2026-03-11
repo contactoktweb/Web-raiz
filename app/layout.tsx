@@ -94,10 +94,10 @@ export default async function RootLayout({
       <body className="font-sans antialiased">
         <CartProvider>
           {children}
-          <CartSidebar />
+          <CartSidebar whatsappNumber={globalSettings?.whatsappNumber} />
         </CartProvider>
         <WhatsAppButton
-          number={globalSettings?.whatsappFloatingNumber}
+          number={globalSettings?.whatsappFloatingNumber || globalSettings?.whatsappNumber}
           message={globalSettings?.whatsappFloatingMessage}
         />
         <Analytics />

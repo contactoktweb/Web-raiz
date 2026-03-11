@@ -63,7 +63,8 @@ export function ProductDetail({ product, related, whatsappNumber = "573001234567
 
   if (!mounted) return null
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hola,%20estoy%20interesado%20en%20el%20producto:%20${encodeURIComponent(
+  const finalNumber = (whatsappNumber || "573001234567").replace(/\\D/g, "")
+  const whatsappLink = `https://wa.me/${finalNumber}?text=Hola,%20estoy%20interesado%20en%20el%20producto:%20${encodeURIComponent(
     product.name
   )}`
 

@@ -12,7 +12,7 @@ import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
-const WHATSAPP_NUMBER = "573001234567"
+const DEFAULT_WHATSAPP_NUMBER = "573001234567"
 
 function formatPrice(price: number) {
     return new Intl.NumberFormat("es-CO", {
@@ -22,7 +22,11 @@ function formatPrice(price: number) {
     }).format(price)
 }
 
-export function CartSidebar() {
+interface CartSidebarProps {
+    whatsappNumber?: string
+}
+
+export function CartSidebar({ whatsappNumber }: CartSidebarProps) {
     const { items, isOpen, setIsOpen, removeItem, updateQuantity, cartTotal } = useCart()
     const [mounted, setMounted] = useState(false)
 
@@ -37,7 +41,8 @@ export function CartSidebar() {
         const totalText = `Total: ${formatPrice(cartTotal)}`
 
         const message = `Hola, quiero realizar el siguiente pedido:%0A%0A${orderDetails}%0A%0A${totalText}`
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`
+        const finalNumber = (whatsappNumber || DEFAULT_WHATSAPP_NUMBER).replace(/\\D/g, "")
+        const url = `https://wa.me/${finalNumber}?text=${message}`
         window.open(url, "_blank")
         setIsOpen(false)
     }
